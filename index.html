@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinovuyo Zitha | Growth & Revenue Operator</title>
+    <style>
+        /* --- CORE SYSTEM ARCHITECTURE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            background-color: #F9F8F4; 
+            color: #1A1A1A; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            letter-spacing: -0.01em;
+            padding-top: 70px;
+        }
+        h1, h2, h3, .serif-text {
+            font-family: "Georgia", "Times New Roman", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            height: 70px;
+            background-color: rgba(249, 248, 244, 0.95);
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 4%;
+            z-index: 1000;
+        }
+        .nav-logo {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .nav-matrix {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+            max-width: 70%;
+        }
+        .nav-matrix a {
+            color: #1A1A1A;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .nav-matrix a:hover { opacity: 1; }
+
+        /* --- LAYOUT MECHANICS --- */
+        .canvas-section {
+            padding: 80px 4%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .divider {
+            border: 0;
+            height: 1px;
+            background-color: rgba(26, 26, 26, 0.1);
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 92%;
+        }
+        .split-grid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 5%;
+            align-items: start;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-left h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 10px; }
+        .hero-left h3 { font-size: 1.5rem; color: #555; margin-bottom: 30px; font-style: italic; }
+        .hero-left p { font-size: 1.2rem; margin-bottom: 20px; max-width: 90%; color: #333; }
+        
+        .hero-right { display: flex; justify-content: center; align-items: center; }
+        .portrait-container {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #E5E5E5;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+        }
+        .portrait-container:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        .portrait-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- PHILOSOPHY BLOCK --- */
+        .philosophy-container {
+            margin-top: 60px;
+            border-left: 2px solid #1A1A1A;
+            padding-left: 30px;
+        }
+        .philosophy-container p {
+            font-family: "Georgia", serif;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* --- IMPACT SNAPSHOT --- */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .impact-card {
+            border-top: 1px solid #1A1A1A;
+            padding-top: 15px;
+        }
+        .impact-metric { font-size: 2.2rem; font-weight: 600; font-family: "Georgia", serif; }
+        .impact-label { font-size: 0.85rem; opacity: 0.7; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .industries-tagline { margin-top: 40px; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8; }
+
+        /* --- CHAPTER DIVIDER --- */
+        .chapter-divider {
+            text-align: center;
+            padding: 100px 4%;
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* --- HOW I THINK --- */
+        .thesis-quote {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        .flow-diagram {
+            background: rgba(0,0,0,0.02);
+            padding: 25px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            overflow-x: auto;
+            border: 1px solid rgba(26,26,26,0.05);
+        }
+
+        /* --- INTERACTIVE GROWTH MAP --- */
+        .growth-map-container {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            gap: 4%;
+            margin-top: 40px;
+        }
+        .map-navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .map-node-btn {
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-family: "Georgia", serif;
+            cursor: pointer;
+            border-left: 2px solid rgba(26, 26, 26, 0.1);
+            transition: all 0.2s;
+        }
+        .map-node-btn.active {
+            border-left-color: #1A1A1A;
+            font-weight: 600;
+            background: rgba(26, 26, 26, 0.03);
+        }
+        .map-content-pane {
+            background: #FAF9F6;
+            padding: 40px;
+            border: 1px solid rgba(26,26,26,0.08);
+            border-radius: 2px;
+        }
+        .pane-stage { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; margin-bottom: 5px; }
+        .pane-title { font-size: 2rem; margin-bottom: 25px; }
+        .pane-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .pane-block h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; color: #555; border-bottom: 1px solid rgba(26,26,26,0.1); padding-bottom: 4px; }
+        .pane-block p { font-size: 0.95rem; color: #222; }
+        .pane-block.full-width { grid-column: span 2; }
+
+        /* --- DIAGNOSTICS GRID --- */
+        .diagnostics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .diagnostic-card {
+            border-top: 1px solid rgba(26,26,26,0.1);
+            padding-top: 20px;
+        }
+        .diagnostic-num { font-family: monospace; font-size: 0.85rem; opacity: 0.5; margin-bottom: 5px; display: block; }
+        .diagnostic-title { font-size: 1.25rem; margin-bottom: 8px; font-weight: 600; }
+
+        /* --- CASE STUDIES ACCORDIONS --- */
+        .case-container { margin-top: 40px; }
+        details.case-card {
+            background: #FAF9F6;
+            border: 1px solid rgba(26, 26, 26, 0.08);
+            margin-bottom: 20px;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        details.case-card[open] {
+            background: #F9F8F4;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        summary.case-summary {
+            padding: 30px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary.case-summary::-webkit-details-marker { display: none; }
+        .summary-left { max-width: 75%; }
+        .summary-left h3 { font-size: 1.6rem; margin-bottom: 8px; }
+        .summary-left p { font-size: 1rem; opacity: 0.7; margin-bottom: 10px; }
+        .summary-metrics { font-family: monospace; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; background: rgba(26,26,26,0.05); padding: 4px 10px; border-radius: 3px; display: inline-block; }
+        .summary-toggle-icon { font-size: 1.5rem; font-weight: 300; transition: transform 0.2s; }
+        details[open] .summary-toggle-icon { transform: rotate(45deg); }
+        
+        .case-expanded-content {
+            padding: 0 30px 40px 30px;
+            border-top: 1px solid rgba(26,26,26,0.05);
+            margin-top: 10px;
+        }
+        .case-block-segment { margin-top: 30px; }
+        .case-block-segment h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 10px; }
+        .case-block-segment blockquote { font-family: "Georgia", serif; font-size: 1.15rem; font-style: italic; border-left: 2px solid #1A1A1A; padding-left: 20px; color: #333; line-height: 1.5; }
+        .case-block-segment ul { list-style-position: inside; margin-top: 10px; }
+        .case-block-segment li { margin-bottom: 8px; font-size: 1rem; }
+        
+        .breathing-break {
+            padding: 60px 0;
+            text-align: center;
+            font-family: "Georgia", serif;
+            font-style: italic;
+            font-size: 1.3rem;
+            opacity: 0.85;
+        }
+
+        /* --- EXPERIENCE INCLUDES --- */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 5%;
+            margin-top: 40px;
+        }
+        .exp-left ul { list-style: none; }
+        .exp-left li { font-size: 1.1rem; margin-bottom: 12px; font-family: "Georgia", serif; position: relative; padding-left: 15px;}
+        .exp-left li::before { content: "•"; position: absolute; left: 0; color: #1A1A1A; }
+        .sector-row { margin-bottom: 25px; border-bottom: 1px solid rgba(26,26,26,0.05); padding-bottom: 15px; }
+        .sector-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
+
+        /* --- CAREER EVOLUTION TIMELINE --- */
+        .timeline-vertical {
+            position: relative;
+            max-width: 800px;
+            margin: 40px 0 0 20px;
+            border-left: 1px solid #1A1A1A;
+            padding-left: 30px;
+        }
+        .timeline-node {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .timeline-node::before {
+            content: "↓";
+            position: absolute;
+            left: -36px;
+            top: -2px;
+            background: #F9F8F4;
+            width: 12px;
+            height: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        .timeline-node:last-child { margin-bottom: 0; }
+        .timeline-node h4 { font-size: 1.25rem; font-family: "Georgia", serif; margin-bottom: 4px; }
+        .timeline-node p { font-size: 0.95rem; opacity: 0.7; }
+
+        /* --- ESSAY BLOCKS --- */
+        .essay-block { max-width: 900px; font-size: 1.15rem; color: #222; margin-top: 30px; }
+        .essay-block p { margin-bottom: 20px; }
+
+        /* --- SYSTEM FOOTER --- */
+        footer {
+            background-color: #1A1A1A;
+            color: #F9F8F4;
+            padding: 80px 4%;
+            margin-top: 80px;
+        }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        .footer-cta { font-size: 2.2rem; max-width: 900px; margin-bottom: 5px; line-height: 1.2; }
+        .footer-intro { font-size: 1.1rem; opacity: 0.7; max-width: 800px; margin-bottom: 50px; }
+        .footer-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            border-top: 1px solid rgba(249, 248, 244, 0.2);
+            padding-top: 40px;
+        }
+        .meta-item span { display: block; font-size: 0.8rem; text-transform: uppercase; opacity: 0.4; letter-spacing: 0.05em; margin-bottom: 8px; }
+        .meta-item p, .meta-item a { font-size: 1.1rem; color: #F9F8F4; text-decoration: none; }
+        .meta-item a:hover { text-decoration: underline; }
+
+        /* --- RESPONSIVE ADAPTATION --- */
+        @media (max-width: 1024px) {
+            .split-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-right { justify-content: start; }
+            .growth-map-container { grid-template-columns: 1fr; }
+            .map-navigation { flex-direction: row; overflow-x: auto; padding-bottom: 10px; border-bottom: 1px solid rgba(26,26,26,0.1); }
+            .map-node-btn { border-left: none; border-bottom: 2px solid transparent; padding: 10px 15px; white-space: nowrap; }
+            .map-node-btn.active { border-bottom-color: #1A1A1A; background: none; }
+            .pane-grid { grid-template-columns: 1fr; }
+            .pane-block.full-width { grid-column: span 1; }
+        }
+        @media (max-width: 768px) {
+            body { padding-top: 60px; }
+            nav { height: 60px; }
+            .hero-left h1 { font-size: 2.5rem; }
+            .summary-left h3 { font-size: 1.3rem; }
+            summary.case-summary { padding: 20px; }
+            .case-expanded-content { padding: 0 20px 30px 20px; }
+            .exp-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GLOBAL NAVIGATION ARCHITECTURE -->
+    <nav>
+        <div class="nav-logo">Sinovuyo Zitha</div>
+        <div class="nav-matrix">
+            <a href="#about">[01] About</a>
+            <a href="#how-i-think">[02] How I Think</a>
+            <a href="#growth-map">[03] Interactive Insights</a>
+            <a href="#diagnostics">[04] Diagnostics</a>
+            <a href="#case-studies">[05] Case Studies</a>
+            <a href="#experience">[06] Experience</a>
+            <a href="#career">[07] Career Evolution</a>
+            <a href="#connect">[08] Connect</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION & CORE PHILOSOPHY -->
+    <section id="about" class="canvas-section">
+        <div class="split-grid">
+            <div class="hero-left">
+                <h1>SINOVUYO ZITHA</h1>
+                <h3>Growth & Revenue Operator</h3>
+                <p>Helping businesses create greater visibility across customer journeys, partner performance and commercial systems.</p>
+                <p>So they can understand what is driving performance, where value is being created and what deserves attention next.</p>
+                <p>Across fintech, trading platforms, SaaS and digital products.</p>
+                
+                <div class="philosophy-container">
+                    <p>I rarely stop at the symptom.</p>
+                    <p>I’m interested in what’s causing it.</p>
+                    <p>Whether it’s customer behaviour, partner performance or commercial outcomes, meaningful progress usually starts with understanding what’s really happening.</p>
+                    <p>Complex problems become easier to solve once they’re properly understood.</p>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="portrait-container">
+                    <img src="image_11.png" alt="Sinovuyo Zitha Portrait">
+                </div>
+            </div>
+        </div>
+
+        <!-- SELECTED IMPACT SNAPSHOT -->
+        <div class="impact-grid">
+            <div class="impact-card"><div class="impact-metric">+20%</div><div class="impact-label">Increase in Funded Conversion</div></div>
+            <div class="impact-card"><div class="impact-metric">+15%</div><div class="impact-label">Increase in Customer Activation</div></div>
+            <div class="impact-card"><div class="impact-metric">30%</div><div class="impact-label">Annual Growth</div></div>
+            <div class="impact-card"><div class="impact-metric">15%</div><div class="impact-label">In eCommerce Conversion</div></div>
+            <div class="impact-card"><div class="impact-metric">30%</div><div class="impact-label">Increase in ROI</div></div>
+            <div class="impact-card"><div class="impact-metric">Top</div><div class="impact-label">National Performer</div></div>
+        </div>
+        <div class="industries-tagline">Industries: Fintech • Trading Platforms • SaaS • Payments • Digital Products</div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- VISUAL CHAPTER DIVIDER -->
+    <div class="chapter-divider">
+        <h3>I don’t give up on the puzzle until I understand what’s really driving it.</h3>
+    </div>
+
+    <hr class="divider">
+
+    <!-- HOW I THINK -->
+    <section id="how-i-think" class="canvas-section">
+        <h2 class="thesis-quote">Growth Is Rarely An Acquisition Problem</h2>
+        <div class="essay-block">
+            <p>Businesses don’t usually struggle because they lack activity. Customers arrive. Partners generate traffic. Campaigns create engagement. The challenge is often understanding what happens next. Where is value being created? Where is momentum being lost? Which activities are producing meaningful commercial outcomes?</p>
+            <p>My work has always centred around creating that clarity. Because growth becomes easier when organisations can clearly see what deserves attention.</p>
+        </div>
+        
+        <div class="flow-diagram">
+            <div>Activity</div><div>──→</div><div>Visibility</div><div>──→</div><div>Understanding</div><div>──→</div><div>Decision</div><div>──→</div><div>Outcome</div>
+        </div>
+
+        <div class="essay-block">
+            <p>Most organisations have activity. Fewer have visibility. And without visibility, decision-making becomes difficult. My work focuses on creating the understanding that allows businesses to make better decisions and produce stronger outcomes.</p>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- THE GROWTH MAP -->
+    <section id="growth-map" class="canvas-section">
+        <h2 style="font-size: 2rem; margin-bottom: 10px;">The Growth Map</h2>
+        <p style="opacity:0.7; margin-bottom: 30px;">Interactive Insights: Select a lifecycle stage to view underlying systems and logic dependencies.</p>
+        
+        <div class="growth-map-container">
+            <div class="map-navigation">
+                <button class="map-node-btn active" onclick="switchNode(0)">01 / Customer</button>
+                <button class="map-node-btn" onclick="switchNode(1)">02 / Acquisition</button>
+                <button class="map-node-btn" onclick="switchNode(2)">03 / Activation</button>
+                <button class="map-node-btn" onclick="switchNode(3)">04 / Revenue</button>
+                <button class="map-node-btn" onclick="switchNode(4)">05 / Retention</button>
+                <button class="map-node-btn" onclick="switchNode(5)">06 / Expansion</button>
+            </div>
+            
+            <div class="map-content-pane" id="node-pane">
+                <!-- Dynamically loaded via Javascript -->
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- OPERATIONAL DIAGNOSTICS -->
+    <section id="diagnostics" class="canvas-section">
+        <h2 style="font-size: 2rem; margin-bottom: 30px;">Operational Diagnostics</h2>
+        <p style="opacity: 0.7; margin-top: -20px; margin-bottom: 40px;">The Questions I Usually Get Called To Solve</p>
+        
+        <div class="diagnostics-grid">
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">01</span>
+                <h4 class="diagnostic-title">Ambiguity in Success</h4>
+                <p>Growth is happening, but nobody understands what is actually driving it.</p>
+            </div>
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">02</span>
+                <h4 class="diagnostic-title">Pipeline Disconnection</h4>
+                <p>When acquisition numbers go up, but revenue metrics stop moving with them.</p>
+            </div>
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">03</span>
+                <h4 class="diagnostic-title">Behavioral Anomalies</h4>
+                <p>When customer behaviour shifts and becomes difficult to explain.</p>
+            </div>
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">04</span>
+                <h4 class="diagnostic-title">Lost Value in Partner Networks</h4>
+                <p>When partner networks expand but lack true visibility and accountability.</p>
+            </div>
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">05</span>
+                <h4 class="diagnostic-title">Fragmented Truths</h4>
+                <p>When different teams are working from different versions of the data.</p>
+            </div>
+            <div class="diagnostic-card">
+                <span class="diagnostic-num">06</span>
+                <h4 class="diagnostic-title">Strategic Paralysis</h4>
+                <p>When leaders need clarity and confidence on where to focus resources next.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CASE STUDIES -->
+    <section id="case-studies" class="canvas-section">
+        <h2 style="font-size: 2rem; margin-bottom: 40px;">Case Studies</h2>
+        
+        <div class="case-container">
+            <!-- CASE 1 -->
+            <details class="case-card">
+                <summary class="case-summary">
+                    <div class="summary-left">
+                        <h3>Improving Visibility Across a Trading Platform</h3>
+                        <p>Connecting fragmented behavioral data to account funding milestones to clarify channel value.</p>
+                        <span class="summary-metrics">+20% Funded Conversion | +15% Customer Activation</span>
+                    </div>
+                    <div class="summary-toggle-icon">+</div>
+                </summary>
+                <div class="case-expanded-content">
+                    <div class="case-block-segment">
+                        <h4>Business Reality</h4>
+                        <blockquote>The business was growing, but confidence wasn’t. Customers were registering. Partners were generating traffic. Campaigns were producing activity. Yet leadership still struggled to answer:<br>• Which acquisition channels created long-term value?<br>• Which customer behaviours predicted funded accounts?<br>• Which partners generated revenue rather than volume?<br>• Where was growth actually being lost?<br>Every team had data. Nobody had a complete picture.</blockquote>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What Was Missing</h4>
+                        <p>Leadership could see registrations. They could see traffic. They could see activity. What they couldn’t see was which actions actually led to funded accounts and long-term value.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What I Focused On</h4>
+                        <p>I mapped the customer journey, updated how we look at user actions in the CRM, and connected those day-to-day behaviours directly to actual account funding and financial milestones.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>+20% Increase in Funded Conversion</li>
+                            <li>+15% Increase in Customer Activation</li>
+                            <li>Improved visibility into customer behaviour</li>
+                            <li>Stronger understanding of partner performance</li>
+                            <li>Better alignment across teams</li>
+                            <li>More confident commercial decision-making</li>
+                        </ul>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Key Learning</h4>
+                        <p>The biggest growth constraint is often not acquisition. It’s understanding what creates value after acquisition.</p>
+                    </div>
+                </div>
+            </details>
+
+            <div class="breathing-break">"The business was growing, but confidence wasn’t."</div>
+
+            <!-- CASE 2 -->
+            <details class="case-card">
+                <summary class="case-summary">
+                    <div class="summary-left">
+                        <h3>Growth During Industry Disruption (L’Oréal)</h3>
+                        <p>Transitioning traditional B2B commercial networks into resilient, digital-first commerce environments during macro closures.</p>
+                        <span class="summary-metrics">30% Annual Growth | +15% eCommerce Conversion | 30% ROI</span>
+                    </div>
+                    <div class="summary-toggle-icon">+</div>
+                </summary>
+                <div class="case-expanded-content">
+                    <div class="case-block-segment">
+                        <h4>Business Reality</h4>
+                        <blockquote>COVID disrupted traditional engagement models across the beauty industry. The challenge wasn’t simply replacing lost activity. The challenge was helping partners adapt to a rapidly changing environment while maintaining commercial momentum. Traditional growth channels were under pressure. Customer behaviour was changing. Digital suddenly became critical. The question wasn’t: “How do we market more?” The question was: “How do we build a more resilient growth model?”</blockquote>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What Was Missing</h4>
+                        <p>A practical way to transition from offline channel operations to digital spaces without losing brand equity or breaking partner relationships.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What I Focused On</h4>
+                        <p>I set up cross-functional digital initiatives, built out commerce operations, and adjusted our acquisition focus to follow where customer habits were moving.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>30% Annual Growth</li>
+                            <li>15% Increase in eCommerce Conversion</li>
+                            <li>30% Increase in ROI</li>
+                            <li>Improved partner engagement</li>
+                            <li>Greater scalability</li>
+                            <li>More resilient growth systems</li>
+                            <li>Stronger digital adoption</li>
+                        </ul>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Key Learning</h4>
+                        <p>Sustainable growth comes from adaptability, not dependency on a single channel.</p>
+                    </div>
+                </div>
+            </details>
+
+            <div class="breathing-break">"Every team had data. Nobody had a complete picture."</div>
+
+            <!-- CASE 3 -->
+            <details class="case-card">
+                <summary class="case-summary">
+                    <div class="summary-left">
+                        <h3>Building Visibility Across a Partner Ecosystem</h3>
+                        <p>Building technical tracking systems to pivot partner networks from volume-based metrics to true bottom-line yield.</p>
+                        <span class="summary-metrics">End-to-End Funnel Tracking | Full Source Lifecycle Visibility</span>
+                    </div>
+                    <div class="summary-toggle-icon">+</div>
+                </summary>
+                <div class="case-expanded-content">
+                    <div class="case-block-segment">
+                        <h4>Business Reality</h4>
+                        <blockquote>Partner programmes are often measured by activity. Traffic. Clicks. Registrations. Introductions. The problem is that activity doesn’t always create commercial value. As partner networks expanded, the business faced a growing challenge: There was no consistent way to understand which relationships were creating meaningful outcomes. Some partners generated significant traffic but limited long-term value. Others delivered fewer customers but stronger commercial performance. Decision-making increasingly relied on assumptions rather than visibility.</blockquote>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What Was Missing</h4>
+                        <p>The ability to link performance back to specific partners, which meant the business was consistently rewarding raw traffic volume over real value.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>What I Focused On</h4>
+                        <p>I built the tracking infrastructure needed to follow partner traffic through every phase of the business funnel, giving leadership a clear view of actual financial returns.</p>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Outcomes</h4>
+                        <ul>
+                            <li>Eliminated guesswork in partner tracking</li>
+                            <li>Stronger understanding of partner performance</li>
+                            <li>Improved partner accountability</li>
+                            <li>Better alignment across teams</li>
+                            <li>More confident commercial decision-making</li>
+                        </ul>
+                    </div>
+                    <div class="case-block-segment">
+                        <h4>Key Learning</h4>
+                        <p>Understanding which customers create value is far more powerful than simply counting how many arrive.</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- EXPERIENCE INCLUDES -->
+    <section id="experience" class="canvas-section">
+        <h2 style="font-size: 2rem; margin-bottom: 30px;">Experience Includes</h2>
+        
+        <div class="exp-grid">
+            <div class="exp-left">
+                <h3 style="margin-bottom: 20px;">Commercial Systems</h3>
+                <ul>
+                    <li>Salesforce</li>
+                    <li>HubSpot</li>
+                    <li>CRM Strategy</li>
+                    <li>Revenue Analytics</li>
+                    <li>API-Driven Reporting</li>
+                    <li>Partner Performance Visibility</li>
+                    <li>Lifecycle Communications</li>
+                </ul>
+            </div>
+            <div class="exp-right">
+                <h3 style="margin-bottom: 20px;">Context & Sectors</h3>
+                <div class="sector-row">
+                    <h4 class="sector-title">Global Enterprise | L’Oréal Professionnel</h4>
+                    <p>Commercial growth initiatives across one of the world’s largest beauty companies.</p>
+                </div>
+                <div class="sector-row">
+                    <h4 class="sector-title">Fintech & Trading Platforms</h4>
+                    <p>Customer journeys, partner ecosystems, CRM, and commercial visibility.</p>
+                </div>
+                <div class="sector-row">
+                    <h4 class="sector-title">Growth-Stage Businesses</h4>
+                    <p>Building reliable commercial systems before a standard market playbook exists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- CAREER EVOLUTION TIMELINE -->
+    <section id="career" class="canvas-section">
+        <h2 style="font-size: 2rem; margin-bottom: 30px;">Career Evolution</h2>
+        
+        <div class="timeline-vertical">
+            <div class="timeline-node">
+                <h4>L'Oréal Professionnel</h4>
+                <p>Commercial Foundations in Global Enterprise</p>
+            </div>
+            <div class="timeline-node">
+                <h4>Customer Growth & Behaviour Focus</h4>
+                <p>Mapping Lifecycle Intent & Engagement Patterns</p>
+            </div>
+            <div class="timeline-node">
+                <h4>Fintech & Trading Platforms Role</h4>
+                <p>CRM Mechanics, Journeys & Heavily Regulated Systems</p>
+            </div>
+            <div class="timeline-node">
+                <h4>Partner Ecosystem Visibility</h4>
+                <p>Data Integrity & Attribution Across Networks</p>
+            </div>
+            <div class="timeline-node">
+                <h4>Revenue Intelligence Transition</h4>
+                <p>Silo Elimination & Direct Cross-Functional Synthesis</p>
+            </div>
+            <div class="timeline-node">
+                <h4>Growth & Revenue Operator</h4>
+                <p>Helping Businesses See What Drives Performance & What to Solve Next</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEXT PHILOSOPHY SECTIONS -->
+    <section class="canvas-section">
+        <div class="essay-block">
+            <h3 style="font-family: Georgia, serif; margin-bottom: 15px;">Building Without A Playbook</h3>
+            <p>The environments that shaped me were rarely mature, predictable or fully built. Whether launching new initiatives inside global brands, supporting growth in fintech businesses or helping teams navigate change, I’ve often worked where there wasn’t a clear roadmap. That’s where I do my best work.</p>
+            <p>I’ve spent much of my career working across teams, functions and objectives. Not because I set out to become cross-functional, but because the challenges themselves demanded it. Many of the opportunities I’ve worked on required building new processes, testing new approaches and creating momentum with limited resources. Those experiences taught me how product, marketing, partnerships, operations and customer behaviour influence one another. Most importantly, they taught me how to create clarity when the path forward isn’t obvious.</p>
+        </div>
+
+        <div class="essay-block" style="margin-top: 50px;">
+            <h3 style="font-family: Georgia, serif; margin-bottom: 15px;">Why Companies Work With Me</h3>
+            <p>Most business problems don’t fit neatly into a single department. Marketing sees one thing. Operations sees another. Commercial teams focus somewhere else. My experience developed across these environments, helping teams understand how customer behaviour, partnerships, systems and business outcomes influence one another. That perspective helps me spot opportunities that are often missed when teams work in isolation.</p>
+        </div>
+
+        <div class="essay-block" style="margin-top: 50px;">
+            <h3 style="font-family: Georgia, serif; margin-bottom: 15px;">Global & Emerging Market Experience</h3>
+            <p>My experience spans South Africa, EMEA and globally distributed customer environments. I’ve worked across international product launches, regulated trading platforms, partner ecosystems and growth initiatives supporting customers, stakeholders and teams operating across multiple regions. This exposure shaped my understanding of customer behaviour, growth systems and commercial execution across both developed and emerging markets.</p>
+        </div>
+
+        <div class="essay-block" style="margin-top: 50px;">
+            <h3 style="font-family: Georgia, serif; margin-bottom: 15px;">What Keeps Me Curious</h3>
+            <p>Outside of my professional work, I am fascinated by how businesses grow, how markets evolve and how technology changes customer behaviour. That curiosity has led me to explore fintech, digital products, partner ecosystems, creator economies and emerging technologies often before they became part of my day-to-day responsibilities. I enjoy understanding patterns, testing ideas and exploring how commercial opportunities emerge in changing environments.</p>
+        </div>
+
+        <div class="essay-block" style="margin-top: 50px;">
+            <h3 style="font-family: Georgia, serif; margin-bottom: 15px;">Currently Exploring</h3>
+            <p>Growth, partnerships, commercial operations and GTM opportunities within fintech, payments, SaaS and emerging technology companies. I’m particularly interested in businesses building new products, entering new markets or navigating complex growth challenges.</p>
+        </div>
+    </section>
+
+    <!-- LET'S DISCUSS (SYSTEM FOOTER) -->
+    <footer id="connect">
+        <div class="footer-content">
+            <h2 class="footer-cta">Let's Discuss What Deserves Attention Next</h2>
+            <p class="footer-intro">I’m always interested in conversations around fintech, trading platforms, SaaS, customer growth, commercial systems and market expansion. Whether you’re scaling a product, improving activation, building partner ecosystems or looking for someone who can connect growth activities to business outcomes, I’d be happy to connect.</p>
+            
+            <div class="footer-meta-grid">
+                <div class="meta-item">
+                    <span>Email</span>
+                    <p><a href="mailto:sinovuyozitha@gmail.com">sinovuyozitha@gmail.com</a></p>
+                </div>
+                <div class="meta-item">
+                    <span>LinkedIn</span>
+                    <p><a href="https://linkedin.com/in/sinovuyo-zitha-734b4250" target="_blank">linkedin.com/in/sinovuyo-zitha-734b4250</a></p>
+                </div>
+                <div class="meta-item">
+                    <span>Location</span>
+                    <p>Johannesburg, South Africa</p>
+                </div>
+                <div class="meta-item">
+                    <span>Availability</span>
+                    <p>Open to remote, hybrid and relocation opportunities globally.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE GROWTH MAP SYSTEM ARCHITECTURE INTERFACE LOGIC -->
+    <script>
+        const nodesData = [
+            {
+                stage: "Stage 01",
+                title: "Customer",
+                wentWrong: "Superficial traffic metrics mask poor audience alignment.",
+                happens: "Understanding who is most likely to create long-term value before significant resources are invested.",
+                signals: "Core behavioral intent patterns, historical profile relevance, and initial target accuracy.",
+                created: "Focusing spend purely on cohorts that possess long-term retention potential.",
+                lost: "Allocating budget to high-volume, low-intent traffic that inflates top-line numbers without converting."
+            },
+            {
+                stage: "Stage 02",
+                title: "Acquisition",
+                wentWrong: "Hidden inefficiencies inside multi-channel budgets go completely unnoticed.",
+                happens: "Different channels are used to reach potential customers and understand which ones create meaningful outcomes.",
+                signals: "Cost of acquisition, channel performance, and how customer behaviour changes after acquisition.",
+                created: "Identifying clear, scalable distribution channels that consistently yield active users.",
+                lost: "Continuing to scale underperforming or unmeasured marketing campaigns based on flawed attribution assumptions."
+            },
+            {
+                stage: "Stage 03",
+                title: "Activation",
+                wentWrong: "Acquisition quality doesn’t match expectations.",
+                happens: "Customers move from interest to meaningful engagement.",
+                signals: "Time to first meaningful action.",
+                created: "Users begin forming product habits.",
+                lost: "Users register but never engage."
+            },
+            {
+                stage: "Stage 04",
+                title: "Revenue",
+                wentWrong: "Pricing structures drift away from actual user habits.",
+                happens: "Customer behavior matches the core pricing and monetization strategy.",
+                signals: "Revenue per customer, transaction behaviour, and long-term customer value.",
+                created: "Aligning cash-flow generation with the features that customers value the most.",
+                lost: "Experiencing unmapped transaction drop-offs and maintaining mispriced packaging tiers."
+            },
+            {
+                stage: "Stage 05",
+                title: "Retention",
+                wentWrong: "Late-stage customer drop-offs occur due to unaddressed friction points.",
+                happens: "Users derive ongoing utility from the product, securing recurring value.",
+                signals: "Longitudinal cohort retention, churn velocity, and usage frequency drops.",
+                created: "Generating predictable lifetime value that forms the foundation for stable growth.",
+                lost: "Replacing churned accounts with increasingly expensive new acquisition cycles."
+            },
+            {
+                stage: "Stage 06",
+                title: "Expansion",
+                wentWrong: "Accounts plateau because account management teams lack visibility into usage patterns.",
+                happens: "Creating more value from existing customer relationships without relying solely on new customer acquisition.",
+                signals: "Net Revenue Retention (NRR), feature adoption curves, and account expansion requests.",
+                created: "Capturing organic revenue growth without incurring net-new customer acquisition costs.",
+                lost: "Leaving contract value untouched due to a lack of cross-functional growth opportunities."
+            }
+        ];
+
+        function switchNode(index) {
+            // Update buttons
+            const buttons = document.querySelectorAll('.map-node-btn');
+            buttons.forEach((btn, i) => {
+                if(i === index) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+
+            // Update content pane
+            const node = nodesData[index];
+            const pane = document.getElementById('node-pane');
+            
+            pane.innerHTML = `
+                <div class="pane-stage">${node.stage}</div>
+                <h3 class="pane-title">${node.title}</h3>
+                <div class="pane-grid">
+                    <div class="pane-block full-width">
+                        <h4>What Happens Here</h4>
+                        <p>${node.happens}</p>
+                    </div>
+                    <div class="pane-block full-width">
+                        <h4>What Usually Goes Wrong</h4>
+                        <p>${node.wentWrong}</p>
+                    </div>
+                    <div class="pane-block">
+                        <h4>What Signals Matter</h4>
+                        <p>${node.signals}</p>
+                    </div>
+                    <div class="pane-block">
+                        <h4>Where Value Is Created</h4>
+                        <p>${node.created}</p>
+                    </div>
+                    <div class="pane-block full-width">
+                        <h4>Where Value Is Lost</h4>
+                        <p>${node.lost}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render Initial Node on Load
+        switchNode(0);
+    </script>
+</body>
+</html>
