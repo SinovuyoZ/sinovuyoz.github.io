@@ -1,11 +1,10 @@
-cat << 'HTMLEOF' > /mnt/user-data/outputs/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Sinovuyo Zitha — Commercial Growth Strategist</title>
-<meta name="description" content="Growth rarely breaks inside a function. It breaks between them. A commercial growth strategist's framework for finding where.">
+<meta name="description" content="Commercial Growth Strategist. Customer acquisition, GTM execution, partnerships, activation and revenue operations across FMCG, luxury, enterprise and fintech.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +13,7 @@ cat << 'HTMLEOF' > /mnt/user-data/outputs/index.html
 :root{
   --bg:#FAF8F4;--white:#FFFFFF;--ink:#0F172A;--mid:#334155;
   --dim:#64748B;--pale:#94A3B8;--border:#E5E2DC;--border-l:#EFEDE7;
-  --navy:#0F172A;--accent:#2563EB;--teal:#14B8A6;
+  --navy:#0F172A;--accent:#2563EB;--green:#25D366;
   --adim:rgba(37,99,235,.05);
 }
 html{scroll-behavior:smooth}
@@ -24,194 +23,250 @@ body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-s
 #progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:200;width:0%;transition:width .1s linear}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 64px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;border-bottom:1px solid transparent}
-nav.sc{background:rgba(250,248,244,.95);backdrop-filter:blur(20px);border-color:var(--border)}
-.nav-name{font-size:13px;font-weight:500;color:var(--ink)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:22px 64px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;border-bottom:1px solid transparent}
+nav.sc{background:rgba(250,248,244,.97);backdrop-filter:blur(20px);border-color:var(--border)}
+.nav-name{font-size:13px;font-weight:500;color:var(--ink);display:flex;flex-direction:column;line-height:1.3}
 .nav-name span{color:var(--dim);font-weight:400}
-.nav-links{display:flex;gap:40px;list-style:none}
+.nav-sub{font-size:10px;color:var(--pale);font-weight:400;letter-spacing:.04em;margin-top:1px}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
 .nav-links a{font-size:12px;color:var(--dim);text-decoration:none;letter-spacing:.03em;transition:color .25s}
 .nav-links a:hover{color:var(--ink)}
+.nav-wa{font-size:12px;background:var(--green);color:#fff;padding:8px 16px;text-decoration:none;font-weight:500;transition:opacity .2s}
+.nav-wa:hover{opacity:.85}
 
-/* UTILS */
-.s{padding:140px 0}
+/* LAYOUT */
 .w{max-width:1140px;margin:0 auto;padding:0 64px}
-.w-narrow{max-width:760px}
+.w-narrow{max-width:760px;margin:0 auto;padding:0 64px}
+.s{padding:120px 0}
 .tag{font-size:11px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
 .h{font-family:'DM Serif Display',serif;font-weight:400;color:var(--ink);letter-spacing:-.01em;line-height:1.15}
 .h-xl{font-size:clamp(34px,4.6vw,58px)}
-.h-lg{font-size:clamp(28px,3.4vw,44px)}
-.h-md{font-size:clamp(22px,2.4vw,30px)}
-.p-lead{font-size:16px;color:var(--mid);line-height:1.9;max-width:520px}
+.h-lg{font-size:clamp(26px,3.2vw,40px)}
+.h-md{font-size:clamp(20px,2.2vw,28px)}
+.p-lead{font-size:16px;color:var(--mid);line-height:1.9}
 .p{font-size:15px;color:var(--dim);line-height:1.9}
 hr.rule{border:none;border-top:1px solid var(--border)}
 
-/* ─── HERO ─── */
-#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 64px 100px;max-width:1140px;margin:0 auto}
+/* BUTTONS */
+.btn{font-size:13px;font-weight:500;padding:13px 26px;text-decoration:none;transition:all .25s;letter-spacing:.01em;display:inline-flex;align-items:center;gap:8px}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-dark:hover{background:var(--accent)}
+.btn-outline{border:1px solid var(--border);color:var(--ink);background:transparent}
+.btn-outline:hover{border-color:var(--ink)}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{opacity:.88}
+.btn-ghost{color:var(--dim);font-size:13px;padding:13px 0;text-decoration:none;transition:color .25s;border-bottom:1px solid transparent}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 64px 90px;max-width:1140px;margin:0 auto}
 .hero-tag{font-size:12px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;font-weight:500;margin-bottom:28px}
-.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(34px,5vw,64px);color:var(--ink);line-height:1.18;font-weight:400;letter-spacing:-.01em;max-width:880px;margin-bottom:36px}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(32px,4.8vw,62px);color:var(--ink);line-height:1.15;font-weight:400;letter-spacing:-.01em;max-width:840px;margin-bottom:32px}
 .hero-h1 .accent{color:var(--accent)}
-.hero-sub{font-size:16px;color:var(--mid);line-height:1.9;max-width:540px;margin-bottom:20px}
-.hero-line{font-size:14px;color:var(--pale);line-height:1.85;max-width:540px;margin-bottom:64px;font-style:italic}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:120px}
-.btn-a{font-size:13px;font-weight:500;padding:13px 28px;text-decoration:none;transition:all .25s;letter-spacing:.01em}
-.btn-fill{background:var(--ink);color:var(--bg)}
-.btn-fill:hover{background:var(--accent)}
-.btn-out{border:1px solid var(--border);color:var(--ink)}
-.btn-out:hover{border-color:var(--ink)}
-.btn-text{color:var(--dim);font-size:13px;padding:13px 0;text-decoration:none;transition:color .25s;border-bottom:1px solid transparent}
-.btn-text:hover{color:var(--ink);border-color:var(--ink)}
+.hero-copy{font-size:16px;color:var(--mid);line-height:1.85;max-width:560px;margin-bottom:16px}
+.hero-operator{font-family:'DM Serif Display',serif;font-size:clamp(18px,2vw,24px);color:var(--ink);font-style:italic;line-height:1.4;max-width:520px;margin-bottom:52px;padding-top:16px;border-top:1px solid var(--border)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:100px}
+.hero-bottom{display:grid;grid-template-columns:260px 1fr;gap:72px;align-items:start;border-top:1px solid var(--border);padding-top:52px}
+.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.04) brightness(1.01);display:block}
+.hero-right{display:flex;flex-direction:column;gap:36px;padding-top:4px}
+.hero-intro-label{font-size:10px;color:var(--pale);letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:14px}
+.hero-intro-text{font-size:15px;color:var(--mid);line-height:1.8;max-width:480px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.hero-tag-pill{font-size:11px;color:var(--dim);border:1px solid var(--border);padding:5px 13px;letter-spacing:.02em}
 
-/* Photo + Patterns row */
-.hero-bottom{display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start;border-top:1px solid var(--border);padding-top:56px;margin-top:32px}
-.hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:grayscale(28%) contrast(1.03) brightness(1.02);display:block;image-rendering:auto}
-.hero-patterns{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;padding-top:8px}
-.hp{padding-top:0}
-.hp-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px}
-.hp-desc{font-size:12px;color:var(--dim);line-height:1.65}
+/* ── OUTCOMES ── */
+#outcomes{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:72px 0}
+.outcomes-header{text-align:center;margin-bottom:52px}
+.outcomes-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
+.oc{padding:40px 36px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white);transition:background .2s}
+.oc:hover{background:var(--bg)}
+.oc-stat{font-family:'DM Serif Display',serif;font-size:clamp(36px,4vw,52px);color:var(--ink);font-weight:400;line-height:1;margin-bottom:14px;letter-spacing:-.02em}
+.oc-stat .a{color:var(--accent)}
+.oc-desc{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:10px}
+.oc-org{font-size:10px;color:var(--pale);letter-spacing:.1em;text-transform:uppercase}
 
-/* ─── CORE IDEA STATEMENT ─── */
-#core{background:var(--navy);padding:120px 64px;text-align:center}
-.core-inner{max-width:760px;margin:0 auto}
-.core-tag{font-size:11px;color:rgba(96,165,250,.65);letter-spacing:.16em;text-transform:uppercase;margin-bottom:28px;font-weight:500}
-.core-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,44px);color:#F8FAFC;font-weight:400;line-height:1.35;letter-spacing:-.01em}
-.core-h .a{color:#60A5FA}
-.core-sub{margin-top:28px;font-size:15px;color:#64748B;line-height:1.85;max-width:540px;margin-left:auto;margin-right:auto}
+/* ── WORKED ACROSS ── */
+#worked-across{padding:40px 0;border-bottom:1px solid var(--border);background:var(--bg)}
+.wa-inner{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.wa-label{font-size:10px;color:var(--pale);letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding-right:32px;border-right:1px solid var(--border);margin-right:32px;white-space:nowrap}
+.wa-items{display:flex;flex-wrap:wrap;gap:0}
+.wa-item{font-size:12px;color:var(--dim);padding:4px 20px 4px 0;letter-spacing:.02em;position:relative}
+.wa-item:not(:last-child)::after{content:'·';position:absolute;right:7px;color:var(--pale)}
 
-/* ─── TRANSLATION LAYER ─── */
-.trans-flow{display:flex;align-items:center;gap:0;flex-wrap:wrap;row-gap:14px;margin:48px 0}
-.tf-item{font-size:13px;color:var(--mid);padding-bottom:4px;border-bottom:1px solid var(--border)}
-.tf-arrow{font-size:13px;color:var(--pale);padding:0 16px}
-.tf-final{color:var(--accent);font-weight:500;border-color:var(--accent)}
+/* ── WHERE I FIT ── */
+#where-i-fit{padding:100px 0;background:var(--navy)}
+.wif-header{margin-bottom:56px}
+.wif-header .tag{color:rgba(96,165,250,.75)}
+.wif-header .h{color:#F8FAFC}
+.wif-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07)}
+.wif-card{background:var(--navy);padding:36px 32px;transition:background .2s}
+.wif-card:hover{background:#1e293b}
+.wif-card-n{font-size:10px;color:rgba(96,165,250,.6);letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:16px}
+.wif-card-title{font-family:'DM Serif Display',serif;font-size:20px;color:#F8FAFC;font-weight:400;margin-bottom:12px;line-height:1.25}
+.wif-card-desc{font-size:13px;color:#64748B;line-height:1.7}
+.wif-footer{margin-top:52px;padding-top:36px;border-top:1px solid rgba(255,255,255,.08);font-size:15px;color:#64748B;max-width:600px;line-height:1.8}
 
-/* ─── WHY PERSPECTIVE DIFFERENT ─── */
-.persp-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-.persp-close{border-left:2px solid var(--accent);padding:18px 24px;background:var(--adim);font-size:15px;color:var(--ink);line-height:1.8;margin-top:8px}
+/* ── PERSPECTIVE ── */
+#perspective{padding:100px 0;background:var(--bg)}
+.persp-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
+.persp-accent{border-left:2px solid var(--accent);padding:18px 24px;background:var(--adim);font-size:15px;color:var(--ink);line-height:1.8;margin-top:24px}
 
-/* ─── GROWTH OPERATING SYSTEM ─── */
-#gos{background:var(--navy);padding:140px 0}
+/* ── DECODER ── */
+#decoder{padding:100px 0;background:var(--white);border-top:1px solid var(--border)}
+.dec-list{margin-top:56px;display:flex;flex-direction:column}
+.de-row{display:grid;grid-template-columns:1fr 280px;gap:60px;padding:40px 0;border-top:1px solid var(--border);align-items:start}
+.de-row:last-of-type{border-bottom:1px solid var(--border)}
+.de-category{font-size:10px;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:10px}
+.de-h{font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);font-weight:400;margin-bottom:10px;line-height:1.3}
+.de-p{font-size:14px;color:var(--dim);line-height:1.85}
+.de-right{text-align:right;padding-top:4px}
+.de-org{font-size:11px;color:var(--pale);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.de-stat{font-family:'DM Serif Display',serif;font-size:22px;color:var(--accent);font-weight:400;line-height:1.2}
+
+/* ── PULL QUOTE ── */
+.pull-quote{padding:90px 64px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pull-quote-dark{background:var(--navy);border:none}
+.pull-quote-dark .pq-text{color:#F8FAFC}
+.pq-text{font-family:'DM Serif Display',serif;font-size:clamp(22px,3vw,38px);color:var(--ink);font-weight:400;line-height:1.3;max-width:700px;margin:0 auto}
+
+/* ── GROWTH OPERATING SYSTEM ── */
+#gos{background:var(--navy);padding:120px 0}
 .gos-inner{max-width:1140px;margin:0 auto;padding:0 64px}
 #gos .tag{color:rgba(96,165,250,.75)}
 #gos .h{color:#F8FAFC}
-#gos .p-lead{color:#64748B}
-.model{margin-top:80px}
-.model-nodes{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:0}
-.m-node{
-  font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#94A3B8;
-  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
-  padding:14px 24px;cursor:pointer;transition:all .25s;letter-spacing:.01em;
-}
-.m-node:hover,.m-node.is-active{border-color:rgba(96,165,250,.5);color:#F8FAFC;background:rgba(37,99,235,.1)}
+.model{margin-top:72px}
+.model-nodes{display:flex;gap:10px;flex-wrap:wrap}
+.m-node{font-family:'Inter',sans-serif;font-size:14px;font-weight:500;color:#94A3B8;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:13px 22px;cursor:pointer;transition:all .25s;letter-spacing:.01em;-webkit-tap-highlight-color:transparent}
+.m-node:hover,.m-node.is-active{border-color:rgba(96,165,250,.5);color:#F8FAFC;background:rgba(37,99,235,.12)}
 .m-node.is-active{box-shadow:inset 0 -2px 0 rgba(96,165,250,.6)}
 .m-node.is-related{border-color:rgba(96,165,250,.25);color:#cbd5e1}
-.m-node.is-dim{opacity:.35}
-.model-panel{margin-top:48px;border-top:1px solid rgba(255,255,255,.08);padding-top:48px;min-height:160px}
+.m-node.is-dim{opacity:.3}
+.model-panel{margin-top:44px;border-top:1px solid rgba(255,255,255,.08);padding-top:44px;min-height:140px}
 .mp-content{display:none}
 .mp-content.is-active{display:block}
 .mp-default.is-hidden{display:none}
-.mp-label{font-size:13px;color:rgba(96,165,250,.85);letter-spacing:.02em;margin-bottom:14px;font-weight:500}
-.mp-label .mp-arrow{color:#475569;font-weight:400}
-.mp-text{font-family:'DM Serif Display',serif;font-size:clamp(18px,2vw,24px);color:#F8FAFC;font-weight:400;line-height:1.55;max-width:680px}
-.mp-default .mp-text{color:#94A3B8;font-family:'Inter',sans-serif;font-size:15px;line-height:1.85}
-.mp-default .mp-label{color:rgba(96,165,250,.65);text-transform:uppercase;letter-spacing:.14em;font-size:11px}
-.gos-final-label{font-size:11px;color:rgba(96,165,250,.6);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
-.gos-final-h{font-family:'DM Serif Display',serif;font-size:clamp(22px,2.8vw,32px);color:#F8FAFC;font-weight:400;line-height:1.4;max-width:680px}
-.gos-final-h .a{color:#60A5FA}
+.mp-label{font-size:12px;color:rgba(96,165,250,.8);letter-spacing:.06em;margin-bottom:14px;font-weight:500}
+.mp-text{font-family:'DM Serif Display',serif;font-size:clamp(18px,2vw,24px);color:#F8FAFC;font-weight:400;line-height:1.5;max-width:680px}
+.mp-default .mp-text{color:#64748B;font-family:'Inter',sans-serif;font-size:15px;line-height:1.85}
+.mp-default .mp-label{color:rgba(96,165,250,.5);text-transform:uppercase;letter-spacing:.14em;font-size:10px}
+.gos-closing{margin-top:60px;padding-top:44px;border-top:1px solid rgba(255,255,255,.08)}
+.gos-closing-label{font-size:10px;color:rgba(96,165,250,.5);letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.gos-closing-h{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.6vw,30px);color:#F8FAFC;font-weight:400;line-height:1.4;max-width:640px}
+.gos-closing-h .a{color:#60A5FA}
 
-/* ─── HUMAN CONTEXT ─── */
-#human{}
-.human-text{font-family:'DM Serif Display',serif;font-size:clamp(20px,2.4vw,28px);color:var(--ink);font-weight:400;line-height:1.5;max-width:680px}
-.human-text .a{color:var(--accent);font-style:italic}
+/* ── WHERE GROWTH BREAKS ── */
+#breaks{padding:100px 0;background:var(--bg)}
+.breaks-list{margin-top:60px;display:flex;flex-direction:column}
+.br-row{display:grid;grid-template-columns:220px 1fr 1fr;gap:40px;padding:32px 0;border-top:1px solid var(--border);align-items:start}
+.br-row:last-of-type{border-bottom:1px solid var(--border)}
+.br-domain{font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);font-weight:400;line-height:1.3}
+.br-col-label{font-size:10px;color:var(--pale);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px;font-weight:500}
+.br-col-text{font-size:13px;color:var(--dim);line-height:1.8}
 
-/* ─── VALUE NETWORK (simplified, list-based) ─── */
-#value{padding:140px 0}
-.value-list{margin-top:72px;display:flex;flex-direction:column}
-.v-row{display:grid;grid-template-columns:240px 1fr 1fr;gap:40px;padding:36px 0;border-top:1px solid var(--border);align-items:start;transition:background .2s}
-.v-row:last-of-type{border-bottom:1px solid var(--border)}
-.v-domain{font-family:'DM Serif Display',serif;font-size:20px;color:var(--ink);font-weight:400;line-height:1.3}
-.v-col-label{font-size:10px;color:var(--pale);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
-.v-col-text{font-size:14px;color:var(--dim);line-height:1.8}
+/* ── CAPABILITIES ── */
+#caps{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 0}
+.caps-grid-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.caps-items{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cap-item{padding:16px 0;border-top:1px solid var(--border-l);font-size:14px;color:var(--ink);font-weight:500}
 
-/* ─── PROBLEMS ─── */
-#problems{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.prob-list{margin-top:64px;display:flex;flex-direction:column}
-.pr-row{display:grid;grid-template-columns:60px 1fr;gap:32px;padding:36px 0;border-top:1px solid var(--border-l)}
-.pr-row:last-of-type{border-bottom:1px solid var(--border-l)}
-.pr-n{font-family:'DM Serif Display',serif;font-size:18px;color:var(--pale)}
-.pr-h{font-family:'DM Serif Display',serif;font-size:21px;color:var(--ink);font-weight:400;margin-bottom:8px}
-.pr-d{font-size:14px;color:var(--dim);line-height:1.85;max-width:620px}
-
-/* ─── DECODER — concept-first ─── */
-#decoder{padding:140px 0}
-.dec-list{margin-top:64px;display:flex;flex-direction:column}
-.de-row{display:grid;grid-template-columns:1fr 320px;gap:60px;padding:44px 0;border-top:1px solid var(--border);align-items:start}
-.de-row:last-of-type{border-bottom:1px solid var(--border)}
-.de-h{font-family:'DM Serif Display',serif;font-size:24px;color:var(--ink);font-weight:400;margin-bottom:12px;line-height:1.3}
-.de-p{font-size:14px;color:var(--dim);line-height:1.85}
-.de-meta{padding-top:6px;text-align:right}
-.de-org{font-size:11px;color:var(--pale);letter-spacing:.08em;text-transform:uppercase}
-.dec-foot{margin-top:40px;font-size:14px;color:var(--pale);font-style:italic}
-
-/* ─── CAPABILITIES ─── */
-#caps{background:var(--white);border-top:1px solid var(--border)}
-.caps-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.caps-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-.cap-row{padding:18px 0;border-top:1px solid var(--border-l);font-size:14px;color:var(--ink);font-weight:500}
-.cap-row:nth-child(-n+2){border-top:1px solid var(--border-l)}
-
-/* ─── FUTURE ─── */
-#future{padding:140px 0}
-.fut-list{margin-top:64px;display:flex;flex-direction:column}
-.fu-row{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:30px 0;border-top:1px solid var(--border)}
-.fu-row:last-of-type{border-bottom:1px solid var(--border)}
-.fu-title{font-size:14px;font-weight:600;color:var(--ink)}
-.fu-desc{font-size:14px;color:var(--dim);line-height:1.85}
-.fut-note{margin-top:48px;font-size:15px;color:var(--mid);line-height:1.9;max-width:600px}
-
-/* ─── CONTACT ─── */
-#contact{background:var(--navy);padding:200px 64px;text-align:center}
-.ct-inner{max-width:640px;margin:0 auto}
-.ct-tag{font-size:11px;color:rgba(96,165,250,.6);letter-spacing:.16em;text-transform:uppercase;margin-bottom:36px}
-.ct-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.6vw,42px);color:#F8FAFC;font-weight:400;line-height:1.35;margin-bottom:28px;letter-spacing:-.01em}
+/* ── CONTACT ── */
+#contact{background:var(--navy);padding:160px 64px;text-align:center}
+.ct-inner{max-width:600px;margin:0 auto}
+.ct-tag{font-size:10px;color:rgba(96,165,250,.6);letter-spacing:.16em;text-transform:uppercase;margin-bottom:32px}
+.ct-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,3.6vw,44px);color:#F8FAFC;font-weight:400;line-height:1.3;margin-bottom:20px;letter-spacing:-.01em}
 .ct-h .a{color:#60A5FA}
-.ct-body{font-size:15px;color:#64748B;line-height:1.9;max-width:480px;margin:0 auto 56px}
-.ct-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-ct-p{background:#F8FAFC;color:var(--navy);font-size:13px;font-weight:500;padding:14px 30px;text-decoration:none;transition:all .25s}
-.btn-ct-p:hover{background:#60A5FA;color:var(--navy)}
-.btn-ct-s{color:#64748B;border:1px solid rgba(255,255,255,.1);font-size:13px;padding:14px 30px;text-decoration:none;transition:all .25s}
-.btn-ct-s:hover{color:#F8FAFC;border-color:rgba(255,255,255,.25)}
+.ct-body{font-size:15px;color:#64748B;line-height:1.85;max-width:460px;margin:0 auto 48px}
+.ct-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-ct-primary{background:#F8FAFC;color:var(--navy);font-size:13px;font-weight:500;padding:14px 28px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-ct-primary:hover{background:#60A5FA;color:var(--navy)}
+.btn-ct-outline{color:#64748B;border:1px solid rgba(255,255,255,.1);font-size:13px;padding:14px 28px;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-ct-outline:hover{color:#F8FAFC;border-color:rgba(255,255,255,.28)}
+.btn-ct-wa{background:var(--green);color:#fff;font-size:13px;font-weight:500;padding:14px 28px;text-decoration:none;transition:opacity .25s;display:inline-flex;align-items:center;gap:8px}
+.btn-ct-wa:hover{opacity:.85}
+.ct-divider{margin:48px auto;width:48px;height:1px;background:rgba(255,255,255,.1)}
+.ct-qr-label{font-size:11px;color:rgba(96,165,250,.45);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.ct-qr-wrap{display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:20px;margin-top:8px}
+.ct-qr-wrap img{width:120px;height:120px;display:block;filter:none}
 
-/* FOOTER */
-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:32px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:28px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .ft-n{font-size:11px;color:#334155;letter-spacing:.04em}
-.ft-l{display:flex;gap:28px}
+.ft-l{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 .ft-l a{font-size:11px;color:#334155;text-decoration:none;transition:color .25s}
 .ft-l a:hover{color:#64748B}
+.ft-wa{font-size:11px;color:var(--green);text-decoration:none;font-weight:500}
+.ft-wa:hover{opacity:.8}
 
-/* REVEAL — minimal */
-.r{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+/* REVEAL */
+.r{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
 .r.v{opacity:1;transform:none}
 
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
-  nav{padding:18px 24px}
+  nav{padding:16px 20px}
   .nav-links{display:none}
-  #hero{padding:120px 24px 64px}
-  .hero-bottom{grid-template-columns:1fr;gap:32px}
-  .hero-patterns{grid-template-columns:1fr 1fr;gap:24px}
-  .w{padding:0 24px}
-  .s{padding:80px 0}
-  #core,#contact{padding:90px 24px}
-  .gos-inner{padding:0 24px}
-  #gos{padding:90px 0}
-  .persp-layout,.caps-layout{grid-template-columns:1fr;gap:32px}
-  .gos-row,.v-row,.de-row,.fu-row{grid-template-columns:1fr;gap:8px}
-  .model-nodes{gap:8px}
-  .m-node{padding:11px 16px;font-size:13px}
-  .de-meta{text-align:left}
-  .pr-row{grid-template-columns:40px 1fr}
-  .caps-grid{grid-template-columns:1fr}
-  footer{padding:24px}
+  .nav-wa{display:none}
+  #hero{padding:110px 20px 64px}
+  .hero-bottom{grid-template-columns:1fr;gap:28px}
+  .hero-photo{max-width:280px}
+  .w,.w-narrow{padding:0 20px}
+  .s{padding:72px 0}
+  .pull-quote{padding:56px 20px}
+  #gos{padding:72px 0}
+  .gos-inner{padding:0 20px}
+  #contact{padding:100px 20px}
+  footer{padding:20px}
+  .outcomes-cards{grid-template-columns:1fr}
+  .oc{border-right:1px solid var(--border)}
+  .wif-cards{grid-template-columns:1fr 1fr}
+  .persp-grid{grid-template-columns:1fr;gap:32px}
+  .de-row{grid-template-columns:1fr;gap:12px}
+  .de-right{text-align:left}
+  .br-row{grid-template-columns:1fr;gap:8px}
+  .caps-grid-layout{grid-template-columns:1fr;gap:32px}
+  .caps-items{grid-template-columns:1fr}
+  .ct-ctas{flex-direction:column;align-items:center}
+  .wa-inner{flex-direction:column;align-items:flex-start;gap:16px}
+  .wa-label{border-right:none;padding-right:0;margin-right:0}
+}
+@media(max-width:560px){
+  .wif-cards{grid-template-columns:1fr}
+  .hero-tags{display:none}
 }
 @media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
+
+/* FLOATING WHATSAPP */
+.float-wa{
+  position:fixed;bottom:28px;right:28px;z-index:500;
+  width:52px;height:52px;border-radius:50%;
+  background:var(--green);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 16px rgba(37,211,102,.35);
+  transition:transform .25s,box-shadow .25s;
+  opacity:0;pointer-events:none;
+}
+.float-wa.show{opacity:1;pointer-events:auto}
+.float-wa:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.45)}
+
+/* DECODER TIMELINE */
+.dec-timeline{position:relative;padding-left:36px}
+.dec-timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--border-l)}
+.de-row-wrap{position:relative}
+.de-row-wrap::before{content:"";position:absolute;left:-31px;top:46px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--white);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+
+/* OUTCOMES BREADTH STRIP */
+.outcomes-breadth{margin-top:32px;padding-top:28px;border-top:1px solid var(--border);display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.ob-label{font-size:10px;color:var(--pale);letter-spacing:.14em;text-transform:uppercase;font-weight:500;white-space:nowrap}
+.ob-items{display:flex;flex-wrap:wrap;gap:0}
+.ob-items span{font-size:12px;color:var(--dim);padding:4px 16px 4px 0;position:relative}
+.ob-items span:not(:last-child)::after{content:"·";position:absolute;right:5px;color:var(--pale)}
+
+/* MODEL SVG */
+.model-svg-wrap{height:0;overflow:visible}
+.model-svg path{stroke:rgba(96,165,250,.2);stroke-width:1;fill:none;transition:stroke .3s,opacity .3s}
+.model-svg path.active{stroke:rgba(96,165,250,.6);stroke-width:1.5}
+.model-svg path.dim{opacity:.15}
 </style>
 </head>
 <body>
@@ -219,104 +274,269 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-name">Sinovuyo Zitha <span>· Commercial Growth Strategist</span></div>
+  <div class="nav-name">Sinovuyo Zitha<span class="nav-sub">Commercial Growth · GTM · Partnerships</span></div>
   <ul class="nav-links">
+    <li><a href="#decoder">Track Record</a></li>
     <li><a href="#gos">The Model</a></li>
-    <li><a href="#value">Where It Breaks</a></li>
-    <li><a href="#decoder">Field Notes</a></li>
+    <li><a href="#breaks">Where Growth Breaks</a></li>
     <li><a href="#contact">Get In Touch</a></li>
+    <li><a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="nav-wa" target="_blank" rel="noopener">WhatsApp</a></li>
   </ul>
 </nav>
 
 <!-- ① HERO -->
 <section id="hero">
-  <div class="hero-tag r">Commercial Growth Strategist</div>
+  <div class="hero-tag r">Commercial Growth Strategist · South Africa | EMEA</div>
   <h1 class="hero-h1 r">
-    Growth rarely breaks inside a function.<br>
+    Growth rarely breaks<br>inside a function.<br>
     It breaks <span class="accent">between them.</span>
   </h1>
-  <p class="hero-sub r">
-    I help organisations find the constraint between customer behaviour, commercial strategy and operational execution — the place most growth problems actually live, and the place most teams aren't set up to look.
+  <p class="hero-copy r">
+    Built commercial growth across FMCG, luxury, enterprise technology and financial services. Customer acquisition, GTM execution, partnerships and revenue operations — not as a consultant, but as someone accountable for the outcome.<br><br>South Africa. Africa. EMEA.
   </p>
-  <p class="hero-line r">My work has taken me through FMCG, luxury, enterprise technology and financial services. The industries changed. The pattern never did.</p>
+  <p class="hero-operator r">The framework came later.<br>The work came first.</p>
   <div class="hero-ctas r">
-    <a href="https://linkedin.com/in/sinovuyozitha" class="btn-a btn-fill" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn-a btn-out" download>Commercial Portfolio</a>
-    <a href="#contact" class="btn-text">Get in touch</a>
+    <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" class="btn btn-dark" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="btn btn-wa" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn btn-outline" download>Commercial Track Record</a>
   </div>
 
   <div class="hero-bottom r">
     <img src="./sinovuyo-zitha-editorial.jpeg" alt="Sinovuyo Zitha" class="hero-photo" loading="eager" decoding="async">
-    <div class="hero-patterns">
-      <div class="hp"><div class="hp-title">Behaviour</div><div class="hp-desc">Understanding decisions at scale</div></div>
-      <div class="hp"><div class="hp-title">Visibility</div><div class="hp-desc">Making value legible</div></div>
-      <div class="hp"><div class="hp-title">Activation</div><div class="hp-desc">Moving intent into action</div></div>
-      <div class="hp"><div class="hp-title">Partnerships</div><div class="hp-desc">Creating commercial leverage</div></div>
-      <div class="hp"><div class="hp-title">Systems</div><div class="hp-desc">Finding where friction lives</div></div>
+    <div class="hero-right">
+      <div>
+        <div class="hero-intro-label">Where I operate</div>
+        <div class="hero-tags">
+          <span class="hero-tag-pill">Customer Acquisition</span>
+          <span class="hero-tag-pill">GTM Execution</span>
+          <span class="hero-tag-pill">Partnerships</span>
+          <span class="hero-tag-pill">Revenue Operations</span>
+          <span class="hero-tag-pill">Activation</span>
+          <span class="hero-tag-pill">Cross-Functional Alignment</span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-intro-label">Industries</div>
+        <p class="hero-intro-text">FMCG · Luxury · Enterprise Technology · Financial Services</p>
+      </div>
+      <div>
+        <div class="hero-intro-label">Geographies</div>
+        <p class="hero-intro-text">South Africa · Africa · EMEA · Global</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ② CORE IDEA -->
-<section id="core">
-  <div class="core-inner r">
-    <div class="core-tag">The Idea Behind The Work</div>
-    <p class="core-h">Most teams diagnose growth problems as marketing problems, sales problems, or product problems.<br><br>They're usually <span class="a">none of those</span> — they're gaps that only become visible when you can see across functions at once.</p>
-  </div>
-</section>
-
-<!-- ③ TRANSLATION LAYER -->
-<section class="s">
-  <div class="w w-narrow">
-    <div class="tag r">Why The Path Here Looks Unusual</div>
-    <h2 class="h h-lg r">On paper, several<br>unrelated industries.</h2>
-    <p class="p-lead r" style="margin-top:24px">Each one exposed a different part of the same problem: how organisations acquire customers, build trust, and turn intent into revenue.</p>
-    <div class="trans-flow r">
-      <div class="tf-item">Behaviour</div><div class="tf-arrow">→</div>
-      <div class="tf-item">Growth</div><div class="tf-arrow">→</div>
-      <div class="tf-item">Visibility</div><div class="tf-arrow">→</div>
-      <div class="tf-item">Complexity</div><div class="tf-arrow">→</div>
-      <div class="tf-item">Revenue Systems</div><div class="tf-arrow">→</div>
-      <div class="tf-item tf-final">This framework</div>
-    </div>
-    <p class="p r">The industries changed. The question — where is this breaking, and why — didn't.</p>
-  </div>
-</section>
-
-<hr class="rule">
-
-<!-- ④ WHY THIS PERSPECTIVE IS DIFFERENT -->
-<section class="s">
+<!-- ② SELECTED OUTCOMES -->
+<section id="outcomes">
   <div class="w">
-    <div class="persp-layout">
+    <div class="outcomes-header r">
+      <div class="tag">Selected Outcomes</div>
+      <h2 class="h h-lg">Results across four industries.</h2>
+    </div>
+    <div class="outcomes-cards r">
+      <div class="oc">
+        <div class="oc-stat"><span class="a">#1</span> Nationally</div>
+        <div class="oc-desc">Ranked top account manager nationally. Three consecutive quarters.</div>
+        <div class="oc-org">L'Oréal · Luxury / FMCG</div>
+      </div>
+      <div class="oc">
+        <div class="oc-stat"><span class="a">100%</span> VIP</div>
+        <div class="oc-desc">Full VIP commercial targets delivered within 60 days of entry.</div>
+        <div class="oc-org">IGT · Enterprise / EMEA</div>
+      </div>
+      <div class="oc">
+        <div class="oc-stat"><span class="a">+20%</span> Conversion</div>
+        <div class="oc-desc">Funded account conversion increased without additional spend.</div>
+        <div class="oc-org">Financial Services · Fintech</div>
+      </div>
+    </div>
+    <div class="outcomes-breadth r">
+      <div class="ob-label">Commercial experience across</div>
+      <div class="ob-items">
+        <span>FMCG</span>
+        <span>Luxury</span>
+        <span>Enterprise Technology</span>
+        <span>Financial Services</span>
+        <span>Partnership Ecosystems</span>
+        <span>EMEA Markets</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ WORKED ACROSS -->
+<section id="worked-across">
+  <div class="w">
+    <div class="wa-inner r">
+      <div class="wa-label">Worked Across</div>
+      <div class="wa-items">
+        <span class="wa-item">Tiger Brands</span>
+        <span class="wa-item">L'Oréal</span>
+        <span class="wa-item">Environ</span>
+        <span class="wa-item">IGT</span>
+        <span class="wa-item">Financial Services</span>
+        <span class="wa-item">South Africa</span>
+        <span class="wa-item">Africa</span>
+        <span class="wa-item">EMEA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ WHERE I FIT -->
+<section id="where-i-fit">
+  <div class="w">
+    <div class="wif-header r">
+      <div class="tag">Where I Create Value</div>
+      <h2 class="h h-lg">Six areas of commercial impact.</h2>
+    </div>
+    <div class="wif-cards r">
+      <div class="wif-card">
+        <div class="wif-card-n">01</div>
+        <div class="wif-card-title">Commercial Strategy</div>
+        <div class="wif-card-desc">Connecting commercial goals to execution. Turning strategy into something the market can feel.</div>
+      </div>
+      <div class="wif-card">
+        <div class="wif-card-n">02</div>
+        <div class="wif-card-title">Go-To-Market Execution</div>
+        <div class="wif-card-desc">Turning plans into market adoption. Closing the gap between what leadership decided and what the front line does.</div>
+      </div>
+      <div class="wif-card">
+        <div class="wif-card-n">03</div>
+        <div class="wif-card-title">Partnerships &amp; Ecosystem Growth</div>
+        <div class="wif-card-desc">Creating leverage through strategic relationships. Building partner programmes that reward outcomes, not just volume.</div>
+      </div>
+      <div class="wif-card">
+        <div class="wif-card-n">04</div>
+        <div class="wif-card-title">Customer Acquisition &amp; Activation</div>
+        <div class="wif-card-desc">Improving conversion across the customer journey. Finding the stage that is quietly losing the most value.</div>
+      </div>
+      <div class="wif-card">
+        <div class="wif-card-n">05</div>
+        <div class="wif-card-title">Revenue Operations</div>
+        <div class="wif-card-desc">Improving commercial visibility and decision-making. Building the infrastructure that connects behaviour to outcome.</div>
+      </div>
+      <div class="wif-card">
+        <div class="wif-card-n">06</div>
+        <div class="wif-card-title">Cross-Functional Alignment</div>
+        <div class="wif-card-desc">Aligning teams around customer outcomes. Making it possible for sales, marketing, product and operations to work from one picture.</div>
+      </div>
+    </div>
+    <div class="wif-footer r">I work at the intersection of customer behaviour, commercial execution and operational alignment.</div>
+  </div>
+</section>
+
+<!-- ⑤ WHY THIS PERSPECTIVE IS DIFFERENT -->
+<section id="perspective">
+  <div class="w">
+    <div class="persp-grid">
       <div class="r">
         <div class="tag">Why This Perspective Is Different</div>
-        <h2 class="h h-lg">Most specialists work<br>inside one function.</h2>
+        <h2 class="h h-lg">Companies organise<br>around departments.<br>Customers do not.</h2>
       </div>
       <div class="r">
-        <p class="p" style="margin-bottom:18px">A career spent across customer acquisition, partnerships, marketing, commercial operations, activation and revenue systems means the constraint is rarely visible from inside any single one of those rooms.</p>
-        <p class="p" style="margin-bottom:18px">A marketing team sees a conversion problem. Sales sees a lead-quality problem. Product sees an onboarding problem. They're usually describing the same gap.</p>
-        <div class="persp-close">The value isn't depth in one function. It's standing at the point where functions meet, and seeing what each one misses on its own.</div>
+        <p class="p" style="margin-bottom:20px">A customer experiences one journey. They do not know which team owns which stage. They just notice when something does not work.</p>
+        <p class="p" style="margin-bottom:20px">Growth opportunities are usually found between acquisition, activation, partnerships, operations and revenue — not inside any one of them. That is where this career has been spent.</p>
+        <div class="persp-accent">Each industry in the track record developed a different commercial capability. FMCG built distribution thinking. Luxury built trust and relationship discipline. Enterprise built stakeholder and execution rigour. Fintech built conversion and activation precision. Together, they produce a commercial operator who can see the full picture.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HUMAN CONTEXT -->
-<section id="human" class="s">
-  <div class="w w-narrow">
-    <p class="human-text">Across different industries and environments, the same pattern kept appearing: capable people, good products, strong intentions — and poor coordination, misaligned incentives, disconnected systems.<br><br>The insight was simple. <span class="a">Growth problems are usually coordination problems.</span> Not talent problems. Not effort problems. Coordination problems — hiding in the space between teams that all believe they're doing their job correctly.</p>
+<!-- ⑥ DECODER -->
+<section id="decoder">
+  <div class="w">
+    <div class="tag r">Track Record</div>
+    <h2 class="h h-xl r">Track Record Across<br>Five Industries.</h2>
+    <p class="p-lead r" style="margin-top:20px;max-width:560px">Each role developed a different dimension of commercial expertise. The industries changed. The commercial discipline did not.</p>
+    <div class="dec-list dec-timeline">
+      <div class="de-row-wrap">
+        <div class="de-row r">
+          <div>
+            <div class="de-category">Customer Behaviour</div>
+            <div class="de-h">Tiger Brands</div>
+            <div class="de-p">Learned how visibility, distribution and purchasing behaviour interact at scale. The gap between stated intent and actual behaviour is where most commercial assumptions quietly fail.</div>
+          </div>
+          <div class="de-right">
+            <div class="de-org">FMCG</div>
+          </div>
+        </div>
+      </div>
+      <div class="de-row-wrap">
+        <div class="de-row r">
+          <div>
+            <div class="de-category">Commercial Growth</div>
+            <div class="de-h">L'Oréal</div>
+            <div class="de-p">Ranked number one nationally for three consecutive quarters through relationship-led account growth. Treated commercial partnerships as compounding assets, not one-off transactions.</div>
+          </div>
+          <div class="de-right">
+            <div class="de-org">Luxury / FMCG</div>
+            <div class="de-stat">#1 Nationally<br>3 Consecutive Quarters</div>
+          </div>
+        </div>
+      </div>
+      <div class="de-row-wrap">
+        <div class="de-row r">
+          <div>
+            <div class="de-category">Market Visibility</div>
+            <div class="de-h">Environ</div>
+            <div class="de-p">Improved the connection between product value and customer discovery. A strong product with poor commercial architecture is functionally invisible. Rebuilt the bridge between product and market.</div>
+          </div>
+          <div class="de-right">
+            <div class="de-org">Premium Consumer</div>
+          </div>
+        </div>
+      </div>
+      <div class="de-row-wrap">
+        <div class="de-row r">
+          <div>
+            <div class="de-category">Enterprise Execution</div>
+            <div class="de-h">IGT</div>
+            <div class="de-p">Delivered 100% of VIP commercial targets within 60 days across complex, multi-market stakeholder environments. In regulated settings, alignment before action is the deliverable. The strategy deck is secondary.</div>
+          </div>
+          <div class="de-right">
+            <div class="de-org">Enterprise / EMEA</div>
+            <div class="de-stat">100% VIP Targets<br>60 Days</div>
+          </div>
+        </div>
+      </div>
+      <div class="de-row-wrap">
+        <div class="de-row r">
+          <div>
+            <div class="de-category">Revenue Optimisation</div>
+            <div class="de-h">Financial Services</div>
+            <div class="de-p">Improved funded-account conversion by 20% through activation-stage improvements. Not by adding spend. By identifying the single stage between sign-up and funded account that was quietly losing the most value.</div>
+          </div>
+          <div class="de-right">
+            <div class="de-org">Fintech</div>
+            <div class="de-stat">+20% Funded<br>Conversion</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ⑤ THE MODEL — Interactive -->
+<!-- PULL QUOTE -->
+<div class="pull-quote r">
+  <p class="pq-text">Customers see one journey. Companies see six departments.</p>
+</div>
+
+<!-- ⑦ GROWTH OPERATING SYSTEM -->
 <section id="gos">
   <div class="gos-inner">
     <div class="tag r">The Model</div>
-    <h2 class="h h-xl r">One question.<br>Six connected lenses.</h2>
-    <p class="p-lead r" style="margin-top:24px">Not a sequence — a system. Select any lens to see what it shapes, and what shapes it.</p>
+    <h2 class="h h-xl r">One question.<br>Six connected areas.</h2>
+    <p class="p-lead r" style="margin-top:20px;color:#64748B">Not a sequence. A system. Select any area to see what it shapes.</p>
 
     <div class="model r">
+      <div class="model-svg-wrap" aria-hidden="true">
+        <svg id="modelSvg" class="model-svg" width="100%" height="60" style="display:block;margin-bottom:-60px;pointer-events:none;position:relative;z-index:1;opacity:0.6"></svg>
+      </div>
       <div class="model-nodes" id="modelNodes">
         <button class="m-node" data-id="behaviour" data-rel="visibility,activation,partnerships,complexity">Behaviour</button>
         <button class="m-node" data-id="visibility" data-rel="behaviour,activation,complexity">Visibility</button>
@@ -325,252 +545,274 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <button class="m-node" data-id="partnerships" data-rel="behaviour,revenue,complexity">Partnerships</button>
         <button class="m-node" data-id="complexity" data-rel="behaviour,visibility,activation,revenue,partnerships">Complexity</button>
       </div>
-
       <div class="model-panel" id="modelPanel">
         <div class="mp-default">
-          <div class="mp-label">How to read this</div>
-          <div class="mp-text">Growth problems rarely exist in isolation. Each lens influences the others. Explore the system.</div>
+          <div class="mp-label">Select any area above</div>
+          <div class="mp-text">Growth problems rarely live in one place. Each area shapes the others. The issue is usually in the connection between them.</div>
         </div>
-
         <div class="mp-content" data-for="behaviour">
-          <div class="mp-label">Behaviour <span class="mp-arrow">→ shapes</span> Visibility, Activation, Partnerships, Complexity</div>
-          <div class="mp-text">What customers actually do, as distinct from what a model assumes. Most growth strategies are built on the second and break on the first — and that gap quietly distorts everything downstream.</div>
+          <div class="mp-label">Customer behaviour influences visibility, activation, partnerships and commercial performance</div>
+          <div class="mp-text">What customers actually do, versus what a model assumes. Most growth plans are built on the second and fail on the first. That gap distorts everything downstream.</div>
         </div>
         <div class="mp-content" data-for="visibility">
-          <div class="mp-label">Visibility <span class="mp-arrow">→ shapes</span> Behaviour, Activation, Complexity</div>
-          <div class="mp-text">A strong product with weak commercial architecture is invisible. Visibility isn't awareness — it's whether the right customer finds the right offer in the right context. Get this wrong and activation never gets a fair test.</div>
+          <div class="mp-label">Visibility influences customer behaviour, activation rates and commercial performance</div>
+          <div class="mp-text">A strong product with weak commercial architecture is invisible. Visibility is not awareness. It is whether the right customer finds the right offer in the right context. Get this wrong and activation never gets a fair test.</div>
         </div>
         <div class="mp-content" data-for="activation">
-          <div class="mp-label">Activation <span class="mp-arrow">→ shapes</span> Behaviour, Visibility, Revenue, Complexity</div>
-          <div class="mp-text">Revenue is an output. The work is finding which stage — acquisition, activation, retention — is quietly broken, and fixing that one stage rather than rebuilding everything around it.</div>
+          <div class="mp-label">Activation influences behaviour, visibility, revenue and overall commercial complexity</div>
+          <div class="mp-text">Revenue is an output. The work is identifying which stage, acquisition, activation or retention, is quietly broken, and fixing that stage rather than rebuilding everything around it.</div>
         </div>
         <div class="mp-content" data-for="revenue">
-          <div class="mp-label">Revenue <span class="mp-arrow">→ shapes</span> Activation, Partnerships, Complexity</div>
-          <div class="mp-text">Revenue performance determines which partnerships get attention and resources — and which activation problems get treated as urgent versus theoretical.</div>
+          <div class="mp-label">Revenue performance influences activation priorities, partnership decisions and complexity</div>
+          <div class="mp-text">Revenue performance determines which partnerships get attention and resources, and which activation problems get treated as urgent versus theoretical.</div>
         </div>
         <div class="mp-content" data-for="partnerships">
-          <div class="mp-label">Partnerships <span class="mp-arrow">→ shapes</span> Behaviour, Revenue, Complexity</div>
-          <div class="mp-text">Relationships compound or they don't, depending on whether the structure rewards mutual outcomes — not just transaction volume. A misaligned partnership quietly reshapes customer behaviour too.</div>
+          <div class="mp-label">Partnership quality influences customer behaviour, revenue outcomes and operational complexity</div>
+          <div class="mp-text">Relationships compound or they do not, depending on whether the structure rewards mutual outcomes, not just transaction volume. A misaligned partnership reshapes customer behaviour too.</div>
         </div>
         <div class="mp-content" data-for="complexity">
-          <div class="mp-label">Complexity <span class="mp-arrow">→ shapes</span> all five lenses</div>
-          <div class="mp-text">In regulated or multi-market environments, execution fails without alignment first. Knowing who needs to move, and in what order, is itself the skill — and it touches every lens above.</div>
+          <div class="mp-label">Complexity touches every other area</div>
+          <div class="mp-text">In regulated or multi-market environments, execution fails without alignment first. Knowing who needs to move, and in what order, is itself the deliverable.</div>
         </div>
       </div>
     </div>
 
-    <div class="gos-final r">
-      <div class="gos-final-label">The Pattern</div>
-      <div class="gos-final-h">The same blind spot, every time: <span class="a">the seam between teams</span> — where each function's metrics look fine, but the customer experiences the gap.</div>
+    <div class="gos-closing r">
+      <div class="gos-closing-label">The Pattern</div>
+      <div class="gos-closing-h">The same gap, every time: <span class="a">the seam between teams.</span> Each function's metrics look fine. The customer experiences the break.</div>
     </div>
   </div>
 </section>
 
-<!-- ⑥ WHERE GROWTH BREAKS (Value Network) -->
-<section id="value">
+<!-- ⑧ WHERE GROWTH BREAKS -->
+<section id="breaks">
   <div class="w">
     <div class="tag r">Where This Shows Up</div>
     <h2 class="h h-xl r">Six places growth<br>quietly breaks.</h2>
-    <p class="p-lead r" style="margin-top:24px">Each looks like an isolated issue from inside its own function. Together, they're usually the same gap in different forms.</p>
-
-    <div class="value-list">
-      <div class="v-row r">
-        <div class="v-domain">Customer Activation</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">A sign-up that never becomes a funded, active customer. Often blamed on "low intent."</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">Friction at a specific step nobody owns — between marketing's promise and product's onboarding.</div></div>
+    <p class="p-lead r" style="margin-top:20px;max-width:520px">Each looks isolated from inside its own function. They are usually the same gap in different forms.</p>
+    <div class="breaks-list">
+      <div class="br-row r">
+        <div class="br-domain">Customer Activation</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">A sign-up that never becomes a funded, active customer. Often attributed to low intent.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">Friction at a specific step nobody owns, sitting between marketing's promise and product's delivery.</div></div>
       </div>
-      <div class="v-row r">
-        <div class="v-domain">Revenue Leakage</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">Acquisition numbers are healthy, but revenue isn't growing at the same rate.</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">One stage of the journey — often invisible in top-line reporting — quietly losing most of the value.</div></div>
+      <div class="br-row r">
+        <div class="br-domain">Revenue Leakage</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">Acquisition numbers are healthy. Revenue is not growing at the same rate.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">One stage of the journey, invisible in top-line reporting, losing most of the value.</div></div>
       </div>
-      <div class="v-row r">
-        <div class="v-domain">Strategic Partnerships</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">A partnership that exists on paper but never produces the expected volume.</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">No shared accountability for outcomes — both sides assumed the other would drive it.</div></div>
+      <div class="br-row r">
+        <div class="br-domain">Strategic Partnerships</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">A partnership that exists on paper but never delivers expected results.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">No shared accountability. Both sides assumed the other would drive it.</div></div>
       </div>
-      <div class="v-row r">
-        <div class="v-domain">GTM Execution</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">A strategy that sounded right in the room but doesn't show up in the market.</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">A translation gap between what leadership decided and what the front line actually does differently.</div></div>
+      <div class="br-row r">
+        <div class="br-domain">GTM Execution</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">A strategy that sounded right in the room. Does not show up in the market.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">A translation gap between what leadership decided and what the front line does differently.</div></div>
       </div>
-      <div class="v-row r">
-        <div class="v-domain">Commercial Visibility</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">Strong product, flat growth, and a team convinced the answer is "more marketing."</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">The right customer can't find or recognise the offer in the context they're in.</div></div>
+      <div class="br-row r">
+        <div class="br-domain">Commercial Visibility</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">Strong product. Flat growth. A team convinced the answer is more marketing spend.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">The right customer cannot find or recognise the offer in the context they are in.</div></div>
       </div>
-      <div class="v-row r">
-        <div class="v-domain">Cross-Functional Alignment</div>
-        <div><div class="v-col-label">Looks Like</div><div class="v-col-text">Every team can show a dashboard that says things are fine.</div></div>
-        <div><div class="v-col-label">Usually Is</div><div class="v-col-text">Each dashboard is measuring something slightly different, and none of them is the customer's experience.</div></div>
+      <div class="br-row r">
+        <div class="br-domain">Cross-Functional Alignment</div>
+        <div><div class="br-col-label">Looks Like</div><div class="br-col-text">Every team shows a dashboard that says things are fine.</div></div>
+        <div><div class="br-col-label">Usually Is</div><div class="br-col-text">Each dashboard measures something slightly different. None of them is the customer's experience.</div></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ⑦ PROBLEMS RECOGNISED -->
-<section id="problems" class="s">
-  <div class="w">
-    <div class="tag r">Patterns, Not Symptoms</div>
-    <h2 class="h h-xl r">What this usually<br>looks like from inside.</h2>
-    <div class="prob-list">
-      <div class="pr-row r"><div class="pr-n">01</div><div><div class="pr-h">Ambiguity in success</div><div class="pr-d">Everyone is busy. No one can confidently say whether the business is actually improving, because the metrics don't connect to a shared story about outcomes.</div></div></div>
-      <div class="pr-row r"><div class="pr-n">02</div><div><div class="pr-h">Pipeline disconnection</div><div class="pr-d">Top-of-funnel looks healthy. Revenue doesn't follow. Something between the first touch and the close is leaking, and it has never been mapped end to end.</div></div></div>
-      <div class="pr-row r"><div class="pr-n">03</div><div><div class="pr-h">Fragmented truths</div><div class="pr-d">Sales, marketing and product each have a credible version of what's happening — and the three versions don't agree, because they were never built on the same definitions.</div></div></div>
-      <div class="pr-row r"><div class="pr-n">04</div><div><div class="pr-h">Strategic paralysis</div><div class="pr-d">Several plausible growth paths are on the table, and the organisation can't commit to one — usually because the actual constraint hasn't been named yet.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑧ DECODER — concept first -->
-<section id="decoder">
-  <div class="w">
-    <div class="tag r">Where The Framework Was Built</div>
-    <h2 class="h h-xl r">Each idea above was<br>tested somewhere first.</h2>
-    <p class="p-lead r" style="margin-top:24px">The companies aren't the point. They're where each part of the framework was stress-tested against a real commercial problem.</p>
-
-    <div class="dec-list">
-      <div class="de-row r">
-        <div><div class="de-h">Understanding behaviour at scale</div><div class="de-p">The relationship between category visibility, shelf decisions and purchase conversion — and why the gap between stated intent and actual behaviour is where most growth assumptions quietly fail.</div></div>
-        <div class="de-meta"><div class="de-org">Tiger Brands — FMCG</div></div>
-      </div>
-      <div class="de-row r">
-        <div><div class="de-h">Building commercial relationships that compound</div><div class="de-p">The difference between managing an account and structuring a partnership for mutual growth. Ranked #1 nationally for three consecutive quarters by treating relationships as systems, not transactions.</div></div>
-        <div class="de-meta"><div class="de-org">L'Oréal — Luxury / FMCG</div></div>
-      </div>
-      <div class="de-row r">
-        <div><div class="de-h">Closing the gap between product and market</div><div class="de-p">A strong product with fragmented channel presence is functionally invisible. Visibility work here meant rebuilding the commercial architecture around an already-good product.</div></div>
-        <div class="de-meta"><div class="de-org">Environ — Premium Consumer</div></div>
-      </div>
-      <div class="de-row r">
-        <div><div class="de-h">Alignment before execution, in complex markets</div><div class="de-p">Regulated, multi-market environments punish execution without sequencing. Delivered 100% of VIP commercial targets within 60 days by mapping the stakeholder order before acting.</div></div>
-        <div class="de-meta"><div class="de-org">IGT — Enterprise / EMEA</div></div>
-      </div>
-      <div class="de-row r">
-        <div><div class="de-h">Finding the one broken stage in a revenue system</div><div class="de-p">Funded conversion improved 20%, activation 15% — not by adding spend, but by identifying which single stage between sign-up and funded account was quietly losing the most value.</div></div>
-        <div class="de-meta"><div class="de-org">Financial Services — Fintech</div></div>
-      </div>
-    </div>
-    <p class="dec-foot r">Five environments. One recurring question.</p>
-  </div>
-</section>
-
-<hr class="rule">
 
 <!-- ⑨ CAPABILITIES -->
-<section id="caps" class="s">
+<section id="caps">
   <div class="w">
-    <div class="caps-layout">
+    <div class="caps-grid-layout">
       <div class="r">
-        <div class="tag">How This Plays Out In Practice</div>
-        <h2 class="h h-lg">Different problems,<br>same lens.</h2>
-        <p class="p" style="margin-top:20px">The tools and titles change by context. The underlying question — where is the coordination failing — doesn't.</p>
+        <div class="tag">How This Plays Out</div>
+        <h2 class="h h-lg">Different problems.<br>Same approach.</h2>
+        <p class="p" style="margin-top:20px">The role title changes by context. The underlying question, where is the coordination breaking down, does not.</p>
       </div>
-      <div class="caps-grid r">
-        <div class="cap-row">When positioning is unclear</div>
-        <div class="cap-row">When demand isn't converting</div>
-        <div class="cap-row">When onboarding loses people</div>
-        <div class="cap-row">When retention quietly erodes</div>
-        <div class="cap-row">When growth has no shared system</div>
-        <div class="cap-row">When partnerships underperform</div>
-        <div class="cap-row">When activation stalls</div>
-        <div class="cap-row">When revenue and operations disagree</div>
+      <div class="caps-items r">
+        <div class="cap-item">When positioning is unclear</div>
+        <div class="cap-item">When demand is not converting</div>
+        <div class="cap-item">When onboarding loses people</div>
+        <div class="cap-item">When retention quietly erodes</div>
+        <div class="cap-item">When growth has no shared system</div>
+        <div class="cap-item">When partnerships underperform</div>
+        <div class="cap-item">When activation stalls</div>
+        <div class="cap-item">When revenue and operations disagree</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ⑩ FUTURE -->
-<section id="future">
-  <div class="w">
-    <div class="tag r">Where The Thinking Holds</div>
-    <h2 class="h h-xl r">The constraint moves.<br>The question doesn't.</h2>
-    <p class="p-lead r" style="margin-top:24px">New tools and platforms change where coordination breaks down — not whether it does.</p>
+<!-- PULL QUOTE DARK -->
+<div class="pull-quote pull-quote-dark r">
+  <p class="pq-text">Most growth problems are coordination problems. Not talent problems. Not effort problems.</p>
+</div>
 
-    <div class="fut-list">
-      <div class="fu-row r"><div class="fu-title">Trust</div><div class="fu-desc">Every new channel or platform resets the question of why a customer should believe a claim — and who, internally, owns that answer.</div></div>
-      <div class="fu-row r"><div class="fu-title">Identity</div><div class="fu-desc">As products get more personalised, "knowing the customer" becomes a coordination problem between teams holding different pieces of who they are.</div></div>
-      <div class="fu-row r"><div class="fu-title">Incentives</div><div class="fu-desc">Misaligned incentives are the quiet cause behind most of the gaps in this framework — and the hardest one to redesign once it's embedded.</div></div>
-      <div class="fu-row r"><div class="fu-title">Automation</div><div class="fu-desc">Automating a broken handoff just makes the gap faster and harder to see. The underlying misalignment has to be fixed first.</div></div>
-      <div class="fu-row r"><div class="fu-title">Communities</div><div class="fu-desc">When value is created between users rather than delivered by a company, the seams move — but they don't disappear.</div></div>
-    </div>
-    <p class="fut-note r">Tools change every few years. The shape of the gap doesn't.</p>
-  </div>
-</section>
-
-<!-- ⑪ CONTACT -->
+<!-- ⑩ CONTACT -->
 <section id="contact">
   <div class="ct-inner r">
     <div class="ct-tag">Get In Touch</div>
-    <h2 class="ct-h">Every organisation has<br><span class="a">complexity.</span></h2>
-    <p class="ct-body">The interesting question is whether you're looking in the place where it actually lives.</p>
+    <h2 class="ct-h">If there's an interesting<br>challenge,<br><span class="a">let's talk.</span></h2>
+    <p class="ct-body">Open to growth leadership roles, commercial partnerships, consulting engagements and founding team opportunities.</p>
     <div class="ct-ctas">
-      <a href="https://linkedin.com/in/sinovuyozitha" class="btn-ct-p" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:sino@metasino.co.za" class="btn-ct-s">Email</a>
-      <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn-ct-s" download>Commercial Portfolio</a>
+      <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" class="btn-ct-primary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:sinovuyozitha@gmail.com" class="btn-ct-outline">Email</a>
+      <a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="btn-ct-wa" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </a>
+      <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn-ct-outline" download>Commercial Track Record</a>
+    </div>
+    <div class="ct-divider"></div>
+    <div class="ct-qr-label">Prefer using your phone? Scan the QR code to connect on WhatsApp.</div>
+    <div class="ct-qr-wrap">
+      <img src="./IMG_1975.jpeg" alt="WhatsApp QR Code" loading="lazy">
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="ft-n">SINOVUYO ZITHA · JOHANNESBURG · AVAILABLE GLOBALLY</div>
+  <div class="ft-n"><strong style="color:#475569;font-weight:600">Sinovuyo Zitha</strong> — Commercial Growth Strategist<br><span style="color:#1e293b">Johannesburg, South Africa · Available for consulting, partnerships and growth leadership roles.</span></div>
   <div class="ft-l">
-    <a href="https://linkedin.com/in/sinovuyozitha" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:sino@metasino.co.za">Email</a>
-    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" download>Commercial Portfolio</a>
+    <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:sinovuyozitha@gmail.com">sinovuyozitha@gmail.com</a>
+    <a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="ft-wa" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" download>Commercial Track Record</a>
   </div>
 </footer>
 
 <script>
-const bar=document.getElementById('progress'),nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  const p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);
-  bar.style.width=(p*100)+'%';
-  nav.classList.toggle('sc',scrollY>60);
-});
-const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');ro.unobserve(e.target)}}),{threshold:.08});
-document.querySelectorAll('.r').forEach(el=>ro.observe(el));
+// Progress + Nav
+const bar = document.getElementById('progress');
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  bar.style.width = (p * 100) + '%';
+  nav.classList.toggle('sc', window.scrollY > 60);
+}, { passive: true });
 
-// Interactive growth model — hover preview, click locks
-const nodes=document.querySelectorAll('.m-node');
-const panelDefault=document.querySelector('.mp-default');
-const panelContents=document.querySelectorAll('.mp-content');
-let locked=null;
+// Reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); ro.unobserve(e.target); } });
+}, { threshold: .07 });
+document.querySelectorAll('.r').forEach(el => ro.observe(el));
 
-function showLens(id){
-  const node=[...nodes].find(n=>n.dataset.id===id);
-  const rel=node.dataset.rel.split(',');
-  nodes.forEach(n=>{
-    n.classList.remove('is-active','is-related','is-dim');
-    if(n.dataset.id===id){n.classList.add('is-active')}
-    else if(rel.includes(n.dataset.id)){n.classList.add('is-related')}
-    else{n.classList.add('is-dim')}
+// Growth Model
+const nodes = document.querySelectorAll('.m-node');
+const panelDefault = document.querySelector('.mp-default');
+const panelContents = document.querySelectorAll('.mp-content');
+let locked = null;
+
+function showLens(id) {
+  const node = [...nodes].find(n => n.dataset.id === id);
+  const rel = node.dataset.rel.split(',');
+  nodes.forEach(n => {
+    n.classList.remove('is-active', 'is-related', 'is-dim');
+    if (n.dataset.id === id) n.classList.add('is-active');
+    else if (rel.includes(n.dataset.id)) n.classList.add('is-related');
+    else n.classList.add('is-dim');
   });
   panelDefault.classList.add('is-hidden');
-  panelContents.forEach(p=>p.classList.toggle('is-active',p.dataset.for===id));
+  panelContents.forEach(p => p.classList.toggle('is-active', p.dataset.for === id));
+  updateModelLines(id, rel);
 }
-function reset(){
-  nodes.forEach(n=>n.classList.remove('is-active','is-related','is-dim'));
+function resetModel() {
+  nodes.forEach(n => n.classList.remove('is-active', 'is-related', 'is-dim'));
   panelDefault.classList.remove('is-hidden');
-  panelContents.forEach(p=>p.classList.remove('is-active'));
+  panelContents.forEach(p => p.classList.remove('is-active'));
+  updateModelLines(null, []);
 }
 
-nodes.forEach(node=>{
-  node.addEventListener('mouseenter',()=>{ if(!locked) showLens(node.dataset.id) });
-  node.addEventListener('mouseleave',()=>{ if(!locked) reset() });
-  node.addEventListener('click',()=>{
-    if(locked===node.dataset.id){ locked=null; reset() }
-    else{ locked=node.dataset.id; showLens(locked) }
+nodes.forEach(node => {
+  node.addEventListener('mouseenter', () => { if (!locked) showLens(node.dataset.id); });
+  node.addEventListener('mouseleave', () => { if (!locked) resetModel(); });
+  node.addEventListener('click', () => {
+    if (locked === node.dataset.id) { locked = null; resetModel(); }
+    else { locked = node.dataset.id; showLens(locked); }
   });
 });
+
+// Mobile swipe for model nodes
+let touchStartX = 0;
+const modelNodes = document.getElementById('modelNodes');
+if (modelNodes) {
+  modelNodes.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  modelNodes.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      const active = [...nodes].findIndex(n => n.classList.contains('is-active'));
+      let next = active === -1 ? 0 : active + (diff > 0 ? 1 : -1);
+      next = Math.max(0, Math.min(nodes.length - 1, next));
+      locked = nodes[next].dataset.id;
+      showLens(locked);
+    }
+  }, { passive: true });
+}
+
+// Model SVG connection lines
+function drawModelLines() {
+  const svg = document.getElementById('modelSvg');
+  if (!svg) return;
+  svg.innerHTML = '';
+  const nodeEls = document.querySelectorAll('.m-node');
+  if (!nodeEls.length) return;
+  const svgRect = svg.getBoundingClientRect();
+  const connections = [
+    ['behaviour','visibility'],['behaviour','activation'],
+    ['visibility','activation'],['activation','revenue'],
+    ['revenue','partnerships'],['behaviour','partnerships'],
+    ['complexity','revenue']
+  ];
+  connections.forEach(([a, b]) => {
+    const na = [...nodeEls].find(n => n.dataset.id === a);
+    const nb = [...nodeEls].find(n => n.dataset.id === b);
+    if (!na || !nb) return;
+    const ra = na.getBoundingClientRect();
+    const rb = nb.getBoundingClientRect();
+    const x1 = ra.left + ra.width / 2 - svgRect.left;
+    const y1 = ra.top + ra.height / 2 - svgRect.top + 60;
+    const x2 = rb.left + rb.width / 2 - svgRect.left;
+    const y2 = rb.top + rb.height / 2 - svgRect.top + 60;
+    const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d', `M${x1},${y1} L${x2},${y2}`);
+    path.dataset.a = a; path.dataset.b = b;
+    svg.appendChild(path);
+  });
+}
+
+function updateModelLines(activeId, relIds) {
+  const svg = document.getElementById('modelSvg');
+  if (!svg) return;
+  svg.querySelectorAll('path').forEach(p => {
+    p.classList.remove('active','dim');
+    if (!activeId) return;
+    const connected = p.dataset.a === activeId || p.dataset.b === activeId;
+    p.classList.toggle('active', connected);
+    p.classList.toggle('dim', !connected);
+  });
+}
+
+drawModelLines();
+window.addEventListener('resize', drawModelLines);
+
+// Floating WhatsApp button
+const floatWa = document.getElementById('floatWa');
+if (floatWa) {
+  window.addEventListener('scroll', () => {
+    floatWa.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+}
 </script>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="float-wa" id="floatWa" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 </body>
 </html>
-HTMLEOF
-echo "Done"
-    {
-  "returncode" : 0,
-  "stdout" : "Done\n",
-  "stderr" : ""
-}
