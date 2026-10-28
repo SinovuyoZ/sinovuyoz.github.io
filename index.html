@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sinovuyo Zitha — Commercial Growth Strategist</title>
 <meta name="description" content="Commercial Growth Strategist. Customer acquisition, GTM execution, partnerships, activation and revenue operations across FMCG, luxury, enterprise and fintech.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,11 +12,11 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#FAF8F4;--white:#FFFFFF;--ink:#0F172A;--mid:#334155;
-  --dim:#64748B;--pale:#94A3B8;--border:#E5E2DC;--border-l:#EFEDE7;
+  --dim:#64748B;--pale:#64748B;--border:#E5E2DC;--border-l:#EFEDE7;
   --navy:#0F172A;--accent:#2563EB;--green:#25D366;
   --adim:rgba(37,99,235,.05);
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;font-weight:400}
 
 /* PROGRESS */
@@ -267,6 +267,80 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 .model-svg path{stroke:rgba(96,165,250,.2);stroke-width:1;fill:none;transition:stroke .3s,opacity .3s}
 .model-svg path.active{stroke:rgba(96,165,250,.6);stroke-width:1.5}
 .model-svg path.dim{opacity:.15}
+
+/* SELECTED WORK */
+#selected-work{padding:100px 0;background:var(--bg);border-bottom:1px solid var(--border)}
+.work-header{max-width:680px;margin-bottom:44px}
+.work-header .p-lead{margin-top:20px}
+.work-index{display:flex;flex-wrap:wrap;gap:10px 24px;list-style:none;margin-top:24px}
+.work-index a{font-size:12px;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:4px}
+.work-index a:hover{color:var(--accent);border-color:var(--accent)}
+.work-list{display:grid;gap:24px}
+.work-card{padding:36px 40px;background:var(--white);border:1px solid var(--border)}
+.work-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:18px}
+.work-kicker{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.work-title{font-family:'DM Serif Display',serif;font-size:clamp(24px,2.6vw,32px);font-weight:400;line-height:1.2;color:var(--ink);scroll-margin-top:44px}
+.work-type{font-size:11px;color:var(--mid);border:1px solid var(--border);padding:6px 12px;white-space:nowrap}
+.work-copy{font-size:15px;color:var(--mid);max-width:780px;line-height:1.85}
+.work-metrics{display:flex;gap:40px;flex-wrap:wrap;margin-top:24px;padding-top:24px;border-top:1px solid var(--border-l)}
+.work-metric strong{display:block;font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;line-height:1.15;color:var(--accent)}
+.work-metric span{display:block;font-size:12px;color:var(--mid);margin-top:6px}
+.work-period{font-size:12px;color:var(--dim);margin-top:12px}
+.work-overview{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,280px);gap:36px;align-items:start}
+.work-asset{margin:0;background:var(--bg);border:1px solid var(--border-l);padding:12px}
+.work-asset a{display:block}
+.work-asset img{display:block;width:100%;height:auto}
+.work-asset figcaption{font-size:11px;color:var(--dim);line-height:1.65;margin-top:10px}
+.work-asset figcaption strong{font-weight:500;color:var(--mid)}
+.work-evidence{margin-top:22px;padding:24px;background:var(--bg);border:1px solid var(--border-l)}
+.work-evidence h4{font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;color:var(--ink);line-height:1.3}
+.work-evidence .work-evidence-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 10px}
+.work-evidence .work-evidence-intro{font-size:13px;color:var(--mid);line-height:1.8;margin:12px 0 0}
+.work-test-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.work-test{padding:18px;background:var(--white);border:1px solid var(--border)}
+.work-test-label{display:block;font-size:10px;font-weight:500;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+.work-test h5{font-family:'DM Serif Display',serif;font-size:21px;font-weight:400;line-height:1.25;color:var(--ink)}
+.work-test p{font-size:13px;color:var(--mid);margin:8px 0 0}
+.work-test small{display:block;font-size:12px;color:var(--dim);margin-top:14px}
+.work-funnel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;gap:12px;margin-top:20px}
+.work-funnel li{padding:18px 14px;background:var(--white);border-top:2px solid var(--accent)}
+.work-funnel strong{display:block;font-family:'DM Serif Display',serif;font-size:30px;line-height:1.15;font-weight:400;color:var(--ink)}
+.work-funnel span{display:block;font-size:12px;color:var(--mid);line-height:1.6;margin-top:8px}
+.work-evidence .work-evidence-note{font-size:12px;color:var(--dim);line-height:1.75;margin:14px 0 0}
+.work-delivery{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;list-style:none}
+.work-delivery li{font-size:12px;color:var(--mid);background:var(--bg);border:1px solid var(--border-l);padding:5px 12px}
+.work-detail{margin-top:24px;border-top:1px solid var(--border-l);padding-top:18px}
+.work-detail summary{font-size:13px;font-weight:500;color:var(--ink);cursor:pointer;width:fit-content;padding:4px 0}
+.work-detail summary::marker{color:var(--accent)}
+.work-detail summary:focus-visible,.work-index a:focus-visible,.work-asset a:focus-visible,.btn:focus-visible,.nav-links a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.work-detail dl{display:grid;grid-template-columns:120px 1fr;gap:12px 24px;margin-top:18px;font-size:14px;line-height:1.8}
+.work-detail dt{font-weight:500;color:var(--ink)}
+.work-detail dd{color:var(--mid)}
+.work-detail p{font-size:13px;color:var(--dim);margin-top:16px}
+
+/* READABILITY ON NAVY */
+.wif-card-desc,.wif-footer,.mp-default .mp-text,.ct-body,.btn-ct-outline,.ft-n,.ft-l a{color:#CBD5E1}
+.wif-header .tag,.wif-card-n,#gos .tag,.mp-label,.mp-default .mp-label,.gos-closing-label,.ct-tag,.ct-qr-label{color:#93C5FD}
+#gos .p-lead{color:#CBD5E1!important}
+.ft-l a:hover{color:#F8FAFC}
+.nav-links a.nav-wa,.btn-wa,.btn-ct-wa,.float-wa{color:var(--navy)}
+@media(max-width:1100px){.nav-links{gap:20px}}
+@media(max-width:900px){
+  #selected-work{padding:64px 0}
+  .work-card{padding:26px 22px}
+  .work-card-top{flex-direction:column;gap:14px}
+  .work-overview{grid-template-columns:1fr;gap:24px}
+  .work-asset{max-width:340px}
+  .work-metrics{gap:24px}
+  .work-detail dl{grid-template-columns:1fr;gap:4px}
+  .work-detail dd{margin-bottom:12px}
+}
+@media(max-width:560px){
+  .work-evidence{padding:18px}
+  .work-test-grid,.work-funnel{grid-template-columns:1fr}
+  .work-funnel li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;align-items:center}
+  .work-funnel span{margin-top:0}
+}
 </style>
 </head>
 <body>
@@ -276,6 +350,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <nav id="nav">
   <div class="nav-name">Sinovuyo Zitha<span class="nav-sub">Commercial Growth · GTM · Partnerships</span></div>
   <ul class="nav-links">
+    <li><a href="#selected-work">Selected Work</a></li>
     <li><a href="#decoder">Track Record</a></li>
     <li><a href="#gos">The Model</a></li>
     <li><a href="#breaks">Where Growth Breaks</a></li>
@@ -292,16 +367,17 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
     It breaks <span class="accent">between them.</span>
   </h1>
   <p class="hero-copy r">
-    Built commercial growth across FMCG, luxury, enterprise technology and financial services. Customer acquisition, GTM execution, partnerships and revenue operations — not as a consultant, but as someone accountable for the outcome.<br><br>South Africa. Africa. EMEA.
+    I lead commercial growth across consumer brands, enterprise technology and financial services. My work covers customer acquisition, go-to-market execution, partnerships and lifecycle marketing, with responsibility for the commercial outcome.<br><br>South Africa. Africa. EMEA.
   </p>
   <p class="hero-operator r">The framework came later.<br>The work came first.</p>
   <div class="hero-ctas r">
-    <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" class="btn btn-dark" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="#selected-work" class="btn btn-dark">View Selected Work</a>
+    <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="btn btn-wa" target="_blank" rel="noopener">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
-    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn btn-outline" download>Commercial Track Record</a>
+    <a href="./Sinovuyo-Zitha-CV.pdf" class="btn btn-outline" download>Download CV</a>
   </div>
 
   <div class="hero-bottom r">
@@ -340,7 +416,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="outcomes-cards r">
       <div class="oc">
         <div class="oc-stat"><span class="a">#1</span> Nationally</div>
-        <div class="oc-desc">Ranked top account manager nationally. Three consecutive quarters.</div>
+        <div class="oc-desc">Ranked #1 Business Developer nationally for three consecutive quarters.</div>
         <div class="oc-org">L'Oréal · Luxury / FMCG</div>
       </div>
       <div class="oc">
@@ -349,9 +425,9 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="oc-org">IGT · Enterprise / EMEA</div>
       </div>
       <div class="oc">
-        <div class="oc-stat"><span class="a">+20%</span> Conversion</div>
-        <div class="oc-desc">Funded account conversion increased without additional spend.</div>
-        <div class="oc-org">Financial Services · Fintech</div>
+        <div class="oc-stat"><span class="a">+15%</span> Activation</div>
+        <div class="oc-desc">Improved customer activation through onboarding, KYC and lifecycle optimisation.</div>
+        <div class="oc-org">FlareX · Fintech</div>
       </div>
     </div>
     <div class="outcomes-breadth r">
@@ -368,6 +444,138 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
   </div>
 </section>
 
+<!-- SELECTED PROJECTS AND RESULTS -->
+<section id="selected-work" aria-labelledby="selected-work-title">
+  <div class="w">
+    <div class="work-header r">
+      <div class="tag">Selected Work</div>
+      <h2 class="h h-lg" id="selected-work-title">Projects, delivery and results.</h2>
+      <p class="p-lead">The commercial question, the work I owned and the evidence behind it. Explore campaigns across fintech, sports participation and responsible innovation.</p>
+      <ul class="work-index" aria-label="Selected case studies">
+        <li><a href="#flarex-work-title">FlareX · Activation</a></li>
+        <li><a href="#planetleague-work-title">Planet League · Campaigns and testing</a></li>
+        <li><a href="#impactscope-work-title">ImpactScope · Communications</a></li>
+      </ul>
+    </div>
+    <div class="work-list">
+      <article class="work-card r" aria-labelledby="flarex-work-title">
+        <div class="work-card-top">
+          <div>
+            <div class="work-kicker">FlareX · Regulated fintech</div>
+            <h3 class="work-title" id="flarex-work-title">Helping sign-ups become active customers.</h3>
+          </div>
+          <span class="work-type">Commercial results</span>
+        </div>
+        <p class="work-copy">I led go-to-market and conversion work for a licensed crypto trading platform, connecting acquisition with onboarding, KYC and lifecycle campaigns.</p>
+        <div class="work-metrics" aria-label="Reported commercial outcomes">
+          <div class="work-metric"><strong>+15%</strong><span>Customer activation</span></div>
+          <div class="work-metric"><strong>+10-20%</strong><span>Funded conversion</span></div>
+        </div>
+        <details class="work-detail">
+          <summary>My role and approach</summary>
+          <dl>
+            <dt>Brief</dt><dd>Improve progression from acquisition and sign-up through KYC to funded accounts.</dd>
+            <dt>My role</dt><dd>Go-to-market planning, funnel analysis, onboarding improvements, CRM segmentation and lifecycle execution.</dd>
+            <dt>Execution</dt><dd>Used GA4, Amplitude and Salesforce data to diagnose drop-off, then worked across commercial, product and operations on onboarding and behavioural messaging in HubSpot and Braze.</dd>
+            <dt>Outcome</dt><dd>Reported improvements of 15% in activation and 10-20% in funded conversion across the optimisation work.</dd>
+          </dl>
+        </details>
+      </article>
+      <article class="work-card r" aria-labelledby="planetleague-work-title">
+        <div class="work-card-top">
+          <div>
+            <div class="work-kicker">Planet League · North East Nurdle Derby</div>
+            <h3 class="work-title" id="planetleague-work-title">Turning football rivalry into participation.</h3>
+          </div>
+          <span class="work-type">Campaigns and experimentation</span>
+        </div>
+        <div class="work-overview">
+          <div>
+            <p class="work-copy">I developed the social rollout and ran Meta creative tests for the North East Nurdle Derby, using club rivalry and prizes to encourage coastal clean-up participation.</p>
+            <p class="work-copy" style="margin-top:16px">My work connected campaign messaging, local targeting and creative coordination with review of the sign-up journey in Meta and GA4.</p>
+            <ul class="work-delivery" aria-label="Areas of contribution"><li>Campaign concept and rollout</li><li>Meta A/B testing</li><li>GA4 and tracking links</li></ul>
+            <p class="work-period">North East England · Campaign work across August-October 2026</p>
+          </div>
+          <figure class="work-asset">
+            <a href="./planetleague-nurdle-derby-standings.png" target="_blank" rel="noopener" aria-label="Open the Nurdle Derby campaign standings graphic at full size">
+              <img src="./planetleague-nurdle-derby-standings.png" width="1080" height="1350" alt="North East Nurdle Derby league table after round one, showing the participating football clubs." loading="lazy">
+            </a>
+            <figcaption><strong>Campaign asset: round-one standings.</strong><br>Design: Humam Maulana. My contribution covered campaign planning, messaging and distribution. Select the image to view it in full.</figcaption>
+          </figure>
+        </div>
+        <details class="work-detail">
+          <summary>Explore the creative test, funnel and approach</summary>
+          <section class="work-evidence" aria-labelledby="planetleague-test-title">
+            <p class="work-evidence-label">Creative experiment · 17-20 September 2026</p>
+            <h4 id="planetleague-test-title">Prize hook or comeback hook?</h4>
+            <p class="work-evidence-intro">For Round 3, I set up two message variants in Meta with a traffic/link-click objective, local targeting and a daily budget of £3 per version.</p>
+            <div class="work-test-grid">
+              <div class="work-test">
+                <span class="work-test-label">Variant A</span>
+                <h5>Prize hook</h5>
+                <p>Lead with the club-shirt reward.</p>
+                <small>£3/day · Separate tracking label</small>
+              </div>
+              <div class="work-test">
+                <span class="work-test-label">Variant B</span>
+                <h5>Comeback hook</h5>
+                <p>Lead with the club-rivalry angle.</p>
+                <small>£3/day · Separate tracking label</small>
+              </div>
+            </div>
+            <p class="work-evidence-note">Recorded test setup: £6/day combined budget; Instagram Feed, Reels and Facebook Feed. Separate tracking links distinguished the message variants.</p>
+          </section>
+          <section class="work-evidence" aria-labelledby="planetleague-funnel-title">
+            <p class="work-evidence-label">Participation funnel · Baseline shared 15 September 2026</p>
+            <h4 id="planetleague-funnel-title">Follow the journey through to joining in.</h4>
+            <ol class="work-funnel" aria-label="Team-reported campaign onboarding baseline">
+              <li><strong>29</strong><span>Started sign-up</span></li>
+              <li><strong>17</strong><span>Selected a team</span></li>
+              <li><strong>13</strong><span>Completed onboarding</span></li>
+            </ol>
+            <p class="work-evidence-note">Team-reported campaign baseline, recorded before the Round 3 creative test. These counts show the onboarding journey being reviewed and are separate from the A/B test's results.</p>
+          </section>
+          <dl>
+            <dt>Campaign question</dt><dd>How do we make a coastline clean-up relevant enough for local football supporters to join, take action and return?</dd>
+            <dt>My contribution</dt><dd>Developed the social rollout, message hierarchy and channel roles. Worked on campaign copy, paid support, creative testing and content coordination across the initial Derby and Season 2.</dd>
+            <dt>Audience decisions</dt><dd>Focused paid activity on relevant North East locations and adapted content for Facebook, Instagram, X and LinkedIn. The Round 3 ad setup removed London and Harrow from the audience.</dd>
+            <dt>Measurement</dt><dd>Used Meta reporting, variant-specific tracking links and GA4 to review the path from campaign response to sign-up and onboarding. Reviewed the team's entry-route comparisons and Season 2 tracking.</dd>
+            <dt>Collaboration</dt><dd>Worked with Vlad on campaign direction and feedback, Humam on creative assets, and the technical team on tracking and the participation journey.</dd>
+            <dt>Learning</dt><dd>Evaluate creative response alongside completed onboarding. Local relevance, a clear participation message and a usable entry route all need to work together for the campaign to turn attention into action.</dd>
+          </dl>
+        </details>
+      </article>
+      <article class="work-card r" aria-labelledby="impactscope-work-title">
+        <div class="work-card-top">
+          <div>
+            <div class="work-kicker">ImpactScope · AI, Web3 and sustainability</div>
+            <h3 class="work-title" id="impactscope-work-title">Building a consistent voice for responsible innovation.</h3>
+          </div>
+          <span class="work-type">Growth and communications</span>
+        </div>
+        <p class="work-copy">I audited ImpactScope's digital presence and developed an editorial approach around responsible AI, digital trust and sustainability. Working with the founder and COO, I turn technical topics and company developments into relevant communications for industry and partner audiences, then review performance to shape the next month's plan.</p>
+        <ul class="work-delivery" aria-label="Work delivered"><li>Channel audit and strategy</li><li>Technical storytelling</li><li>Campaign delivery and reporting</li></ul>
+        <div class="work-metrics" aria-label="ImpactScope publishing output in the July reporting snapshot">
+          <div class="work-metric"><strong>5</strong><span>LinkedIn posts</span></div>
+          <div class="work-metric"><strong>4</strong><span>X posts</span></div>
+        </div>
+        <p class="work-period">Publishing output from the July / early August 2026 performance report.</p>
+        <details class="work-detail">
+          <summary>Strategy, campaign example and results</summary>
+          <dl>
+            <dt>Challenge</dt><dd>Build a consistent, credible presence around technical subjects and connect communications with the company's positioning and relevant industry conversations.</dd>
+            <dt>My role</dt><dd>Growth and communications consulting: channel research, editorial strategy, content development, creative and approval coordination, publishing and monthly performance review.</dd>
+            <dt>Strategy</dt><dd>Developed content pillars around industry insight, education and proof of expertise. Adapted messaging for LinkedIn and X, with distinct priorities for ImpactScope and Planet League.</dd>
+            <dt>Campaign example</dt><dd>For EIT Health's privacy-enhancing technology programme, I developed two LinkedIn copy approaches, reviewed the partner's channel activity and recommended LinkedIn for the announcement. I refined the selected approach with ImpactScope's COO and coordinated approval and scheduling.</dd>
+            <dt>Early performance</dt><dd>The July / early August report recorded 5 LinkedIn posts and 4 X posts for ImpactScope, an organic impression range of 82-120, and 3-6 reactions on most posts. Responsible AI &amp; Trust was the strongest-performing theme in the report.</dd>
+            <dt>Learning and next steps</dt><dd>Used the performance review and stakeholder feedback to shape the August editorial plan, including more relevant research, targeted industry conversations and internal amplification. The report established an early reference point for reach and engagement.</dd>
+          </dl>
+        </details>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ③ WORKED ACROSS -->
 <section id="worked-across">
   <div class="w">
@@ -378,7 +586,9 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <span class="wa-item">L'Oréal</span>
         <span class="wa-item">Environ</span>
         <span class="wa-item">IGT</span>
-        <span class="wa-item">Financial Services</span>
+        <span class="wa-item">FlareX</span>
+        <span class="wa-item">ImpactScope</span>
+        <span class="wa-item">Planet League</span>
         <span class="wa-item">South Africa</span>
         <span class="wa-item">Africa</span>
         <span class="wa-item">EMEA</span>
@@ -426,7 +636,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="wif-card-desc">Aligning teams around customer outcomes. Making it possible for sales, marketing, product and operations to work from one picture.</div>
       </div>
     </div>
-    <div class="wif-footer r">I work at the intersection of customer behaviour, commercial execution and operational alignment.</div>
+    <div class="wif-footer r">I connect customer behaviour, commercial execution and the teams responsible for delivery.</div>
   </div>
 </section>
 
@@ -451,7 +661,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
 <section id="decoder">
   <div class="w">
     <div class="tag r">Track Record</div>
-    <h2 class="h h-xl r">Track Record Across<br>Five Industries.</h2>
+    <h2 class="h h-xl r">A commercial track record<br>across industries.</h2>
     <p class="p-lead r" style="margin-top:20px;max-width:560px">Each role developed a different dimension of commercial expertise. The industries changed. The commercial discipline did not.</p>
     <div class="dec-list dec-timeline">
       <div class="de-row-wrap">
@@ -496,7 +706,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
           <div>
             <div class="de-category">Enterprise Execution</div>
             <div class="de-h">IGT</div>
-            <div class="de-p">Delivered 100% of VIP commercial targets within 60 days across complex, multi-market stakeholder environments. In regulated settings, alignment before action is the deliverable. The strategy deck is secondary.</div>
+            <div class="de-p">Delivered 100% of VIP commercial targets within 60 days across South Africa, the UK and Spain, coordinating commercial and product stakeholders for regulated product rollouts.</div>
           </div>
           <div class="de-right">
             <div class="de-org">Enterprise / EMEA</div>
@@ -508,12 +718,12 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <div class="de-row r">
           <div>
             <div class="de-category">Revenue Optimisation</div>
-            <div class="de-h">Financial Services</div>
-            <div class="de-p">Improved funded-account conversion by 20% through activation-stage improvements. Not by adding spend. By identifying the single stage between sign-up and funded account that was quietly losing the most value.</div>
+            <div class="de-h">FlareX · Financial Services</div>
+            <div class="de-p">Led go-to-market and lifecycle work across regulated trading platforms. Used funnel analysis, CRM segmentation and onboarding improvements to address drop-off and improve customer activation and funded conversion.</div>
           </div>
           <div class="de-right">
             <div class="de-org">Fintech</div>
-            <div class="de-stat">+20% Funded<br>Conversion</div>
+            <div class="de-stat">+15% Activation<br>+10-20% Funded Conversion</div>
           </div>
         </div>
       </div>
@@ -666,7 +876,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Message on WhatsApp
       </a>
-      <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" class="btn-ct-outline" download>Commercial Track Record</a>
+      <a href="./Sinovuyo-Zitha-CV.pdf" class="btn-ct-outline" download>Download CV</a>
     </div>
     <div class="ct-divider"></div>
     <div class="ct-qr-label">Prefer using your phone? Scan the QR code to connect on WhatsApp.</div>
@@ -683,7 +893,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding
     <a href="https://www.linkedin.com/in/sinovuyo-zitha-734b4250" target="_blank" rel="noopener">LinkedIn</a>
     <a href="mailto:sinovuyozitha@gmail.com">sinovuyozitha@gmail.com</a>
     <a href="https://wa.me/27734912954?text=Hi%20Sinovuyo,%20I%20found%20your%20website." class="ft-wa" target="_blank" rel="noopener">WhatsApp</a>
-    <a href="./Sinovuyo-Zitha-Commercial-Growth-Portfolio.pdf" download>Commercial Track Record</a>
+    <a href="./Sinovuyo-Zitha-CV.pdf" download>Download CV</a>
   </div>
 </footer>
 
@@ -816,3 +1026,4 @@ if (floatWa) {
 </a>
 </body>
 </html>
+
